@@ -47,34 +47,30 @@ const courses = [
         items: "【 メニュー内容 】 ひれ酒/煮こごり/ふぐ皮酢/ふぐ刺し/ふぐ鍋/から揚げ/白子焼き/雑炊/香の物/デザート",
         note: "時期 12月〜3月中旬",
         color: "from-[#4682B4] to-[#2F5496]",
-        image: "/images/fugu_course_enhanced.png",
+        image: "/images/fugu-retouched.png",
     },
 ];
 
 const specialties = [
     {
-        image: "/images/basashi.png",
+        image: "/images/basashi-retouched.png",
         name: "馬刺し",
         description: "地場産の極上馬刺し。新鮮な赤身の旨みととろける脂の甘み。",
-        price: "時価",
     },
     {
-        image: "/images/matsutake-tempura.png",
+        image: "/images/matsutake-tempura-enhanced.png",
         name: "松茸の天麩羅",
         description: "香り高い地場産松茸を贅沢に天麩羅で。",
-        price: "時価",
     },
     {
-        image: "/images/hamo-yubiki.png",
+        image: "/images/hamo-yubiki-enhanced.png",
         name: "活鱧の湯引き",
         description: "南高梅の梅肉を添えて。夏の風物詩。",
-        price: "時価",
     },
     {
-        image: "/images/karasumi.png",
-        name: "自家製からすみ",
-        description: "丁寧に仕込んだ自家製からすみ。日本酒との相性抜群。",
-        price: "時価",
+        image: "/images/sansai-tempura-enhanced.png",
+        name: "山菜の天ぷら",
+        description: "信州の春の味覚、山菜の天ぷら。独特の香りと苦味をお楽しみください。",
     },
 ];
 
@@ -217,9 +213,6 @@ export default function MenuPage() {
                                         >
                                             {item.name}
                                         </h3>
-                                        <span className="text-[#8B2500] text-sm shrink-0">
-                                            {item.price}
-                                        </span>
                                     </div>
                                     <p className="text-sm text-[#555555] mt-1">
                                         {item.description}

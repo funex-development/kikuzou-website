@@ -147,7 +147,7 @@ export default function Home() {
             <div className="card group stagger-item">
               <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
                 <Image
-                  src="/images/kinoko-nabe.png"
+                  src="/images/kinoko_nabe_enhanced.png"
                   alt="名物 きのこ鍋"
                   fill
                   className="object-cover"
@@ -171,7 +171,7 @@ export default function Home() {
             <div className="card group stagger-item">
               <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
                 <Image
-                  src="/images/basashi.png"
+                  src="/images/basashi-retouched.png"
                   alt="極上 馬刺し"
                   fill
                   className="object-cover"
@@ -195,7 +195,7 @@ export default function Home() {
             <div className="card group stagger-item">
               <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
                 <Image
-                  src="/images/fugu.png"
+                  src="/images/fugu-retouched.png"
                   alt="冬の贅沢 河豚コース"
                   fill
                   className="object-cover"

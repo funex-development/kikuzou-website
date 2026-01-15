@@ -16,7 +16,7 @@ const faqs = [
     {
         question: "子供連れでも大丈夫ですか？",
         answer:
-            "はい、お子様連れでもご来店いただけます。お子様連れのご予約はお電話にてお願いいたします。お子様用のメニューもご相談いただけます。",
+            "はい、お子様連れでもご来店いただけます。個室もございますので、お気軽にご利用ください。なお、お子様連れのご予約はお電話にてお願いいたします。",
     },
     {
         question: "個室はありますか？",
@@ -41,7 +41,7 @@ const faqs = [
     {
         question: "滞在時間に制限はありますか？",
         answer:
-            "お席の滞在時間は2時間までとさせていただいております。ご了承ください。",
+            "混雑状況により、お席の滞在時間を2時間までとさせていただく場合がございます。あらかじめご了承ください。",
     },
 ];
 
@@ -165,7 +165,7 @@ export default function ReservePage() {
                                 <p className="text-[#555555] text-sm pl-5">
                                     お子様連れでのご予約はお電話にてお願いいたします。
                                     <br />
-                                    小学生以上のお子様からご入店いただけます。
+                                    個室のご案内などもさせていただきます。
                                 </p>
                             </div>
 
@@ -175,7 +175,7 @@ export default function ReservePage() {
                                     滞在時間
                                 </h3>
                                 <p className="text-[#555555] text-sm pl-5">
-                                    お席の滞在時間は2時間までとさせていただいております。
+                                    混雑状況により、お席の滞在時間を2時間までとさせていただく場合がございます。
                                 </p>
                             </div>
 
@@ -205,7 +205,7 @@ export default function ReservePage() {
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="bg-white/10 rounded p-6">
-                                <h3 className="font-medium mb-4 text-[#B8860B]">
+                                <h3 className="font-medium mb-4 text-white" style={{ color: "white" }}>
                                     コース予約の場合
                                 </h3>
                                 <ul className="space-y-2 text-sm">
@@ -224,7 +224,7 @@ export default function ReservePage() {
                                 </ul>
                             </div>
                             <div className="bg-white/10 rounded p-6">
-                                <h3 className="font-medium mb-4 text-[#B8860B]">
+                                <h3 className="font-medium mb-4 text-white" style={{ color: "white" }}>
                                     席のみ予約の場合
                                 </h3>
                                 <ul className="space-y-2 text-sm">

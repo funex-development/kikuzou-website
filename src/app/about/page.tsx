@@ -185,7 +185,7 @@ export default function AboutPage() {
                             {/* 店内画像 */}
                             <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md group stagger-item hover-zoom">
                                 <Image
-                                    src="/images/interior-counter.png"
+                                    src="/images/interior-counter-enhanced.png"
                                     alt="カウンター席"
                                     fill
                                     className="object-cover"
@@ -198,7 +198,7 @@ export default function AboutPage() {
                             </div>
                             <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md group stagger-item hover-zoom">
                                 <Image
-                                    src="/images/interior-private.png"
+                                    src="/images/interior-private-enhanced.png"
                                     alt="個室"
                                     fill
                                     className="object-cover"
@@ -211,7 +211,7 @@ export default function AboutPage() {
                             </div>
                             <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md group stagger-item hover-zoom">
                                 <Image
-                                    src="/images/interior-zashiki.png"
+                                    src="/images/interior-zashiki-enhanced.png"
                                     alt="座敷"
                                     fill
                                     className="object-cover"
