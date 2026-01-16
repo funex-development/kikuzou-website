@@ -290,30 +290,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* メディア掲載 */}
-            <section className="section-sm bg-[#F5F2EB]">
-                <div className="container mx-auto px-4 lg:px-6">
-                    <div className="max-w-3xl mx-auto text-center">
-                        <FadeIn>
-                            <h2
-                                className="text-xl mb-6"
-                                style={{ fontFamily: "var(--font-serif)" }}
-                            >
-                                メディア掲載
-                            </h2>
-                        </FadeIn>
-                        <FadeIn delay={200}>
-                            <div className="flex flex-wrap justify-center gap-6 text-[#555555]">
-                                <span className="px-4 py-2 bg-white rounded shadow-sm">pen</span>
-                                <span className="px-4 py-2 bg-white rounded shadow-sm">ZAGAT</span>
-                            </div>
-                            <p className="mt-4 text-sm text-[#555555]">
-                                その他、多数のメディアにてご紹介いただいております
-                            </p>
-                        </FadeIn>
-                    </div>
-                </div>
-            </section>
+
         </>
     );
 }

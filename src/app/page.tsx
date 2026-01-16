@@ -222,7 +222,7 @@ export default function Home() {
                 href="/menu"
                 className="btn btn-outline text-base px-8 py-3"
               >
-                すべての料理を見る
+                コース・料理を見る
               </Link>
             </div>
           </FadeIn>
