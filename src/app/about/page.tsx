@@ -13,7 +13,7 @@ const features = [
     {
         title: "天然素材へのこだわり",
         description:
-            "名物のきのこ鍋には、地場産の天然きのこを100%使用。松茸、アカヤマドリ、うしびてなど、山の恵みをそのままお届けします。養殖や輸入品は一切使用しておりません。",
+            "魚は天然物のみ、朝獲れ鮮魚が夕刻には届きます。山菜・茸は地場産天然物を使用。野菜も旬を見極め、最も美味しい状態でお届けします。",
         icon: (
             <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
                 <path d="M12 2C7 2 3 7 3 10c0 4 3.5 6 5 8v3c0 1 1 1 1 1h6s1 0 1-1v-3c1.5-2 5-4 5-8 0-3-4-8-9-8z" strokeLinecap="round" strokeLinejoin="round" />
@@ -60,6 +60,16 @@ const features = [
         ),
     },
 ];
+
+// ... (render update inside the component)
+// Since this tool needs contiguous edits, I will focus on replacing the features array def first.
+// But wait, if I change the array def, the map function later will try to render `feature.description` which might be a mix of strings and objects if TS allows or if I don't update types.
+// The file is .tsx. `features` is const. TS will infer `description` as `string | JSX.Element`.
+// However, the rendering logic at line 163: `<p className="...">{feature.description}</p>` might warn if description is a div.
+// Nesting div inside p is invalid HTML.
+// I should update the rendering logic too. Since replace_file_content is single contiguous block, I can't update both if they are far apart.
+// Lines 12-62 are definition. Lines 163-165 are usage. They are separate.
+// I should use multi_replace_file_content.
 
 export default function AboutPage() {
     return (
@@ -122,7 +132,7 @@ export default function AboutPage() {
                             <FadeIn direction="right" delay={200}>
                                 <div className="relative rounded overflow-hidden shadow-lg bg-[#1a1a1a]">
                                     <Image
-                                        src="/images/kikuzou.jpg"
+                                        src="/images/kikuzou-entrance.jpg"
                                         alt="きく蔵 店舗外観"
                                         width={800}
                                         height={600}
@@ -141,6 +151,11 @@ export default function AboutPage() {
                     <FadeIn>
                         <div className="section-title">
                             <h2 style={{ fontFamily: "var(--font-serif)" }}>私たちのこだわり</h2>
+                            <p className="mt-4 text-[#555555]">
+                                上質な時間を過ごしていただける空間作り。
+                                <br />
+                                心地よいサービスの提供
+                            </p>
                         </div>
                     </FadeIn>
 
@@ -160,9 +175,9 @@ export default function AboutPage() {
                                     >
                                         {feature.title}
                                     </h3>
-                                    <p className="text-sm text-[#555555] leading-relaxed">
+                                    <div className="text-sm text-[#555555] leading-relaxed">
                                         {feature.description}
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -181,46 +196,56 @@ export default function AboutPage() {
                     </FadeIn>
 
                     <div className="max-w-5xl mx-auto">
-                        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={150}>
-                            {/* 店内画像 */}
-                            <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md group stagger-item hover-zoom">
-                                <Image
-                                    src="/images/interior-counter-enhanced.png"
-                                    alt="カウンター席"
-                                    fill
-                                    className="object-cover"
-                                />
-                                <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span className="text-white font-serif text-lg tracking-widest">
-                                        カウンター
-                                    </span>
+                        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8" staggerDelay={150}>
+                            {/* カウンター席 */}
+                            <div className="stagger-item">
+                                <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md group hover-zoom mb-4">
+                                    <Image
+                                        src="/images/interior-counter-white.png"
+                                        alt="カウンター席"
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
+                                <h3 className="text-lg font-medium mb-2 text-[#8B2500]" style={{ fontFamily: "var(--font-serif)" }}>カウンター席</h3>
+                                <p className="text-sm text-[#555555] leading-relaxed">
+                                    居心地のよいカウンター席。<br />
+                                    お一人様でも気兼ねなく、ゆったりとお寛ぎいただけます。職人の技を間近で楽しめる特等席です。
+                                </p>
                             </div>
-                            <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md group stagger-item hover-zoom">
-                                <Image
-                                    src="/images/interior-private-enhanced.png"
-                                    alt="個室"
-                                    fill
-                                    className="object-cover"
-                                />
-                                <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span className="text-white font-serif text-lg tracking-widest">
-                                        個室
-                                    </span>
+
+                            {/* 個室 */}
+                            <div className="stagger-item">
+                                <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md group hover-zoom mb-4">
+                                    <Image
+                                        src="/images/interior-private-white.png"
+                                        alt="個室"
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
+                                <h3 className="text-lg font-medium mb-2 text-[#8B2500]" style={{ fontFamily: "var(--font-serif)" }}>個室</h3>
+                                <p className="text-sm text-[#555555] leading-relaxed">
+                                    3～6名様収容可能な個室を3室ご用意しております。<br />
+                                    接待やご会食、ご家族での団欒など、プライベートな時間を大切にしたい場面に最適です。
+                                </p>
                             </div>
-                            <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md group stagger-item hover-zoom">
-                                <Image
-                                    src="/images/interior-zashiki-enhanced.png"
-                                    alt="座敷"
-                                    fill
-                                    className="object-cover"
-                                />
-                                <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span className="text-white font-serif text-lg tracking-widest">
-                                        座敷
-                                    </span>
+
+                            {/* 座敷 */}
+                            <div className="stagger-item">
+                                <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md group hover-zoom mb-4">
+                                    <Image
+                                        src="/images/interior-zashiki-white.png"
+                                        alt="座敷"
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
+                                <h3 className="text-lg font-medium mb-2 text-[#8B2500]" style={{ fontFamily: "var(--font-serif)" }}>座敷</h3>
+                                <p className="text-sm text-[#555555] leading-relaxed">
+                                    最大12名様まで収容可能な広間をご用意しております。<br />
+                                    落ち着きのある和の空間は、各種ご宴会や法事、お祝いのお席など、大人数でのお集まりにおすすめです。
+                                </p>
                             </div>
                         </StaggerContainer>
 

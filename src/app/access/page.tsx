@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
     title: "アクセス・店舗情報",
     description:
-        "割烹・季節料理きく蔵へのアクセス方法と店舗情報。住所：長野県松本市大手4丁目7-10。松本駅お城口から徒歩15分、松本城から徒歩5分。営業時間17:30〜22:00（日曜定休）。",
+        "味処 きく蔵へのアクセス方法と店舗情報。住所：長野県松本市大手4丁目7-10。松本駅お城口から徒歩15分、松本城から徒歩5分。営業時間17:30〜22:00（日曜定休）。",
 };
 
 export default function AccessPage() {
@@ -58,7 +58,7 @@ export default function AccessPage() {
                                     <tbody>
                                         <tr>
                                             <th>店名</th>
-                                            <td>割烹・季節料理 きく蔵</td>
+                                            <td>味処 きく蔵</td>
                                         </tr>
                                         <tr>
                                             <th>住所</th>
@@ -85,7 +85,7 @@ export default function AccessPage() {
                                         </tr>
                                         <tr>
                                             <th>定休日</th>
-                                            <td className="text-[#8B2500]">日曜日</td>
+                                            <td className="text-[#8B2500]">日曜日<br /><span className="text-xs text-black">※月曜日が祝日の場合は、日曜営業・月曜休業となります。</span></td>
                                         </tr>
                                         <tr>
                                             <th>席数</th>
@@ -176,12 +176,7 @@ export default function AccessPage() {
                                         当店より徒歩約3分
                                     </p>
                                 </div>
-                                <div className="p-4 bg-[#F5F2EB] rounded">
-                                    <p className="font-medium text-sm">タイムズ松本大手</p>
-                                    <p className="text-xs text-[#555555] mt-1">
-                                        当店より徒歩約2分
-                                    </p>
-                                </div>
+
                             </div>
                         </div>
                     </div>

@@ -1,54 +1,18 @@
 import { Metadata } from "next";
-import { FAQStructuredData } from "@/components/StructuredData";
+
 
 export const metadata: Metadata = {
     title: "ご予約",
     description:
-        "割烹・季節料理きく蔵のご予約案内。電話予約（0263-36-3728）または食べログからネット予約が可能です。コース料理は前日までにご予約ください。キャンセルポリシー、よくあるご質問もご確認いただけます。",
+        "味処 きく蔵のご予約案内。電話予約（0263-36-3728）または食べログからネット予約が可能です。コース料理は3日前までにご予約ください。キャンセルポリシーもご確認いただけます。",
 };
 
-const faqs = [
-    {
-        question: "予約は必要ですか？",
-        answer:
-            "お席のご予約をおすすめしております。特に週末や繁忙期は満席になることが多いため、事前のご予約をお願いいたします。コース料理は前日までにご予約ください。",
-    },
-    {
-        question: "子供連れでも大丈夫ですか？",
-        answer:
-            "はい、お子様連れでもご来店いただけます。個室もございますので、お気軽にご利用ください。なお、お子様連れのご予約はお電話にてお願いいたします。",
-    },
-    {
-        question: "個室はありますか？",
-        answer:
-            "はい、個室をご用意しております。2〜4名様の半個室が2室、4〜6名様の完全個室、4〜12名様までの完全個室がございます。ご予約時にお申し付けください。",
-    },
-    {
-        question: "駐車場はありますか？",
-        answer:
-            "申し訳ございませんが、専用駐車場はございません。近隣にコインパーキングがございますので、そちらをご利用ください。",
-    },
-    {
-        question: "クレジットカードは使えますか？",
-        answer:
-            "はい、VISA、Master、JCB、AMEX、Dinersがご利用いただけます。また、PayPayでのお支払いも可能です。",
-    },
-    {
-        question: "予約のキャンセル料はかかりますか？",
-        answer:
-            "コース予約の場合、ご来店2日前から50%、前日70%、当日100%のキャンセル料が発生します。席のみ予約の場合、当日及び無断キャンセルは1名あたり3,000円のキャンセル料をいただきます。",
-    },
-    {
-        question: "滞在時間に制限はありますか？",
-        answer:
-            "混雑状況により、お席の滞在時間を2時間までとさせていただく場合がございます。あらかじめご了承ください。",
-    },
-];
+
 
 export default function ReservePage() {
     return (
         <>
-            <FAQStructuredData faqs={faqs} />
+
 
             {/* ページヘッダー */}
             <section className="pt-32 pb-16 bg-[#333333] flex items-center justify-center">
@@ -84,8 +48,7 @@ export default function ReservePage() {
                                     お電話でのご予約
                                 </h2>
                                 <p className="text-[#555555] text-sm mb-6">
-                                    3名様以上、お子様連れ、
-                                    <br />
+                                    4名様以上、お子様連れ、<br />
                                     ネット予約が満席の場合はお電話ください
                                 </p>
                                 <a
@@ -113,8 +76,7 @@ export default function ReservePage() {
                                     ネット予約
                                 </h2>
                                 <p className="text-[#555555] text-sm mb-6">
-                                    食べログから24時間
-                                    <br />
+                                    食べログから24時間<br />
                                     ご予約いただけます
                                 </p>
                                 <a
@@ -128,6 +90,27 @@ export default function ReservePage() {
                                 <p className="text-xs text-[#555555] mt-4">
                                     ※ 外部サイトに移動します
                                 </p>
+                            </div>
+
+                            {/* 予約に関する重要なお知らせ */}
+                            <div className="mt-12 p-6 md:p-8 bg-red-50 border-2 border-[#8B2500] rounded text-center shadow-sm col-span-1 md:col-span-2">
+                                <h3 className="text-xl md:text-2xl font-bold text-[#8B2500] mb-6" style={{ fontFamily: "var(--font-serif)" }}>
+                                    ご予約に関するお願い
+                                </h3>
+                                <div className="space-y-4 text-base md:text-lg font-medium text-[#333333]">
+                                    <p>
+                                        <span className="border-b-2 border-[#8B2500]">ネット予約は3名様まで</span>とさせていただいております。<br />
+                                        なるべくお電話でのご予約をお願いいたします。
+                                    </p>
+                                    <p className="text-xl md:text-2xl font-bold text-[#8B2500] py-2">
+                                        4名様以上、及びお子様連れのお客様は、<br />
+                                        必ず「お電話」でのご予約をお願いいたします。
+                                    </p>
+                                    <p>
+                                        ネット予約が満席でもお席が用意できる日がありますので、<br />
+                                        お気軽にお電話ください。
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -151,7 +134,7 @@ export default function ReservePage() {
                                     コース料理のご予約
                                 </h3>
                                 <p className="text-[#555555] text-sm pl-5">
-                                    コース料理は前日までにご予約ください。
+                                    コース料理は3日前までにご予約ください。
                                     <br />
                                     宴会は12名様までとなります。
                                 </p>
@@ -179,15 +162,7 @@ export default function ReservePage() {
                                 </p>
                             </div>
 
-                            <div className="p-6 bg-[#F5F2EB] rounded">
-                                <h3 className="font-medium mb-3 flex items-center gap-2">
-                                    <span className="text-[#8B2500]">●</span>
-                                    お通し代
-                                </h3>
-                                <p className="text-[#555555] text-sm pl-5">
-                                    お通し代として700円を頂戴しております。
-                                </p>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -199,7 +174,7 @@ export default function ReservePage() {
                     <div className="max-w-3xl mx-auto">
                         <h2
                             className="text-xl text-center mb-6"
-                            style={{ fontFamily: "var(--font-serif)" }}
+                            style={{ fontFamily: "var(--font-serif)", color: "#ffffff" }}
                         >
                             キャンセルポリシー
                         </h2>
@@ -239,39 +214,7 @@ export default function ReservePage() {
                 </div>
             </section>
 
-            {/* FAQ */}
-            <section className="section bg-[#F5F2EB]">
-                <div className="container mx-auto px-4 lg:px-6">
-                    <div className="max-w-3xl mx-auto">
-                        <div className="section-title">
-                            <h2 style={{ fontFamily: "var(--font-serif)" }}>
-                                よくあるご質問
-                            </h2>
-                        </div>
 
-                        <div className="space-y-4">
-                            {faqs.map((faq, index) => (
-                                <details
-                                    key={index}
-                                    className="bg-white rounded shadow-sm overflow-hidden group"
-                                >
-                                    <summary className="p-4 md:p-6 cursor-pointer list-none flex items-center justify-between hover:bg-[#FAFAFA] transition-colors">
-                                        <span className="font-medium pr-4">{faq.question}</span>
-                                        <span className="text-[#8B2500] shrink-0 transition-transform group-open:rotate-180">
-                                            ▼
-                                        </span>
-                                    </summary>
-                                    <div className="px-4 md:px-6 pb-4 md:pb-6 pt-0">
-                                        <p className="text-[#555555] text-sm leading-relaxed">
-                                            {faq.answer}
-                                        </p>
-                                    </div>
-                                </details>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
         </>
     );
 }

@@ -6,6 +6,7 @@ const footerNavigation = [
     { name: "きく蔵について", href: "/about" },
     { name: "アクセス", href: "/access" },
     { name: "ご予約", href: "/reserve" },
+    { name: "よくあるご質問", href: "/faq" },
 ];
 
 export default function Footer() {
@@ -19,7 +20,7 @@ export default function Footer() {
                             className="text-xl font-medium mb-6 text-[#B8860B]"
                             style={{ fontFamily: "var(--font-serif)" }}
                         >
-                            割烹・季節料理 きく蔵
+                            味処 きく蔵
                         </h3>
                         <address className="not-italic space-y-2 text-sm text-gray-300">
                             <p>〒390-0874</p>
@@ -45,7 +46,7 @@ export default function Footer() {
                         </h3>
                         <div className="space-y-2 text-sm text-gray-300">
                             <p>17:30 ～ 22:00（L.O. 21:15）</p>
-                            <p className="text-[#8B2500]">定休日：日曜日</p>
+                            <p className="text-[#8B2500]">定休日：日曜日<br /><span className="text-xs">※月曜日が祝日の場合は、日曜営業・月曜休業となります。</span></p>
                         </div>
                     </div>
 
@@ -112,7 +113,7 @@ export default function Footer() {
 
                         {/* コピーライト */}
                         <p className="text-sm text-gray-500">
-                            © {new Date().getFullYear()} 割烹・季節料理 きく蔵. All rights
+                            © {new Date().getFullYear()} 味処 きく蔵. All rights
                             reserved.
                         </p>
                     </div>

@@ -21,15 +21,15 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kikuzou.vercel.app"),
   title: {
-    default: "割烹・季節料理 きく蔵 | 松本市の老舗日本料理店",
-    template: "%s | 割烹・季節料理 きく蔵",
+    default: "味処 きく蔵 | 松本市の老舗日本料理店",
+    template: "%s | 味処 きく蔵",
   },
   description:
-    "創業1970年、長野県松本市の老舗割烹料理店「きく蔵」。食べログ日本料理百名店選出。地場産の天然きのこを使用したきのこ鍋、極上の馬刺し、季節の河豚料理など四季折々の味覚をお楽しみください。松本城から徒歩5分。",
+    "創業1970年、長野県松本市の老舗日本料理店「味処 きく蔵」。食べログ日本料理百名店選出。地場産の天然きのこを使用したきのこ鍋、極上の馬刺し、季節の河豚料理など四季折々の味覚をお楽しみください。松本城から徒歩5分。",
   keywords: [
     "きく蔵",
     "松本",
-    "割烹",
+    "味処",
     "日本料理",
     "和食",
     "百名店",
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ja_JP",
     url: "https://kikuzou.vercel.app",
-    siteName: "割烹・季節料理 きく蔵",
-    title: "割烹・季節料理 きく蔵 | 松本市の老舗日本料理店",
+    siteName: "味処 きく蔵",
+    title: "味処 きく蔵 | 松本市の老舗日本料理店",
     description:
       "創業1970年、食べログ日本料理百名店選出。四季折々の味覚をお楽しみください。",
     images: [
@@ -54,13 +54,13 @@ export const metadata: Metadata = {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "割烹・季節料理 きく蔵",
+        alt: "味処 きく蔵",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "割烹・季節料理 きく蔵 | 松本市の老舗日本料理店",
+    title: "味処 きく蔵 | 松本市の老舗日本料理店",
     description:
       "創業1970年、食べログ日本料理百名店選出。四季折々の味覚をお楽しみください。",
     images: ["/images/og-image.png"],
@@ -80,7 +80,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${notoSerifJP.variable} ${notoSansJP.variable}`}>
+    <html lang="ja" className={`${notoSerifJP.variable} ${notoSansJP.variable}`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

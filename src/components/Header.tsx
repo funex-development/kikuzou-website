@@ -9,6 +9,7 @@ const navigation = [
     { name: "料理", href: "/menu" },
     { name: "きく蔵について", href: "/about" },
     { name: "アクセス", href: "/access" },
+    { name: "よくあるご質問", href: "/faq" },
 ];
 
 export default function Header() {
@@ -38,8 +39,8 @@ export default function Header() {
         <>
             <header
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? "bg-white/95 backdrop-blur-sm shadow-md py-3"
-                    : "bg-white/90 backdrop-blur-sm shadow-sm py-4"
+                    ? "bg-white/95 backdrop-blur-sm shadow-md py-2"
+                    : "bg-white/90 backdrop-blur-sm shadow-sm py-3"
                     }`}
             >
                 <div className="container mx-auto px-4 lg:px-6">
@@ -47,22 +48,23 @@ export default function Header() {
                         {/* ロゴ */}
                         <Link
                             href="/"
-                            className="flex items-center"
+                            className="flex items-center shrink-0"
                         >
                             <img
-                                src="/images/logo.gif"
+                                src="/images/kikuzou_rogo2.png"
                                 alt="きく蔵"
-                                className="h-10 md:h-12 w-auto"
+                                className="w-auto object-contain"
+                                style={{ height: '48px', maxHeight: '48px' }}
                             />
                         </Link>
 
                         {/* デスクトップナビゲーション */}
-                        <div className="hidden md:flex items-center gap-8">
+                        <div className="hidden md:flex items-center gap-6 lg:gap-8">
                             {navigation.map((item) => (
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className={`text-sm tracking-wide transition-colors hover:text-[#8B2500] ${pathname === item.href
+                                    className={`text-sm tracking-wide transition-colors whitespace-nowrap hover:text-[#8B2500] ${pathname === item.href
                                         ? "text-[#8B2500] font-medium"
                                         : "text-[#333333]"
                                         }`}
@@ -73,7 +75,7 @@ export default function Header() {
                             ))}
                             <Link
                                 href="/reserve"
-                                className="btn btn-primary text-sm px-5 py-2.5"
+                                className="btn btn-primary text-sm px-5 py-2 whitespace-nowrap"
                             >
                                 ご予約
                             </Link>
@@ -82,7 +84,7 @@ export default function Header() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Instagram"
-                                className="hover:opacity-80 transition-opacity"
+                                className="hover:opacity-80 transition-opacity shrink-0"
                             >
                                 <img
                                     src="/images/インスタロゴ-removebg-preview.png"

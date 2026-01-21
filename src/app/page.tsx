@@ -12,56 +12,99 @@ export default function Home() {
 
       {/* ヒーローセクション */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* 背景画像（プレースホルダー） */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a] to-[#333333]">
-          <div className="absolute inset-0 bg-[url('/images/hero-pattern.png')] opacity-10"></div>
+        {/* 背景：モバイルは画像、PCは動画 */}
+        <div className="absolute inset-0 bg-[#333333]">
+          {/* モバイル用画像 */}
+          <img
+            src="/images/hero-mobile.jpg"
+            alt="きく蔵 店舗外観"
+            className="w-full h-full object-cover md:hidden"
+            style={{ objectPosition: 'center 35%' }}
+          />
+          {/* PC用動画 */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="hidden md:block w-full h-full object-cover object-center"
+            poster="/images/hero-bg.jpg"
+          >
+            <source src="/images/hero3.mp4" type="video/mp4" />
+          </video>
         </div>
 
-        {/* オーバーレイ */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        {/* オーバーレイ（テキスト読みやすさのため） */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
 
         {/* コンテンツ */}
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <FadeIn delay={200} duration={800}>
-            <p
-              className="text-sm md:text-base tracking-[0.3em] mb-4 text-[#B8860B]"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              創業1970年 ― 食べログ百名店
-            </p>
-          </FadeIn>
-          <FadeIn delay={400} duration={1000}>
-            <h1
-              className="text-4xl md:text-6xl lg:text-7xl font-medium mb-6 tracking-wider"
-              style={{ fontFamily: "var(--font-serif)", color: "#B8860B" }}
-            >
-              割烹・季節料理
-              <br />
-              <span className="text-5xl md:text-7xl lg:text-8xl">きく蔵</span>
-            </h1>
-          </FadeIn>
-          <FadeIn delay={600} duration={800}>
-            <p
-              className="text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto opacity-90"
-              style={{ fontFamily: "var(--font-sans)" }}
-            >
-              四季を感じる日本料理
-              <br className="md:hidden" />
-              <span className="hidden md:inline"> ― </span>
-              信州松本の旬をお届けします
-            </p>
-          </FadeIn>
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-screen">
+          {/* テキストコンテンツ */}
+          <div className="mt-16 md:mt-0">
+            <FadeIn delay={200} duration={800}>
+              <p
+                className="text-sm md:text-base tracking-[0.3em] mb-4 text-[#B8860B]"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                創業1970年 ― 食べログ百名店
+              </p>
+            </FadeIn>
+            <FadeIn delay={400} duration={1000}>
+              <h1
+                className="text-4xl md:text-6xl lg:text-7xl font-medium mb-6 tracking-wider"
+                style={{ fontFamily: "var(--font-serif)", color: "#B8860B" }}
+              >
+                味処
+                <br />
+                <span className="text-5xl md:text-7xl lg:text-8xl">きく蔵</span>
+              </h1>
+            </FadeIn>
+            <FadeIn delay={600} duration={800}>
+              <p
+                className="text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto opacity-90"
+                style={{ fontFamily: "var(--font-sans)" }}
+              >
+                四季を感じる日本料理
+                <br className="md:hidden" />
+                <span className="hidden md:inline"> ― </span>
+                信州松本の旬をお届けします
+              </p>
+            </FadeIn>
+            {/* PC用ボタン - テキストと一緒に表示 */}
+            <FadeIn delay={800} duration={800}>
+              <div className="hidden md:flex flex-row gap-4 justify-center">
+                <Link
+                  href="/reserve"
+                  className="btn btn-primary text-base px-8 py-4"
+                >
+                  ご予約はこちら
+                </Link>
+                <Link
+                  href="/menu"
+                  className="btn btn-outline border-white hover:bg-white hover:text-[#333333] text-base px-8 py-4"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  料理を見る
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+
+        {/* モバイル用ボタン - セクションに対して下部に配置 */}
+        <div className="md:hidden absolute bottom-24 left-0 right-0 z-20 px-4">
           <FadeIn delay={800} duration={800}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col gap-4 justify-center items-center max-w-sm mx-auto">
               <Link
                 href="/reserve"
-                className="btn btn-primary text-base px-8 py-4"
+                className="btn btn-primary text-base px-8 py-4 w-full text-center"
               >
                 ご予約はこちら
               </Link>
               <Link
                 href="/menu"
-                className="btn btn-outline border-white hover:bg-white hover:text-[#333333] text-base px-8 py-4"
+                className="btn btn-outline border-white hover:bg-white hover:text-[#333333] text-base px-8 py-4 w-full text-center"
                 style={{ color: "#FFFFFF" }}
               >
                 料理を見る
@@ -104,13 +147,12 @@ export default function Home() {
                 className="text-lg leading-relaxed text-[#555555] mb-8"
                 style={{ fontFamily: "var(--font-sans)" }}
               >
-                創業以来半世紀以上、きく蔵は信州松本の地で
-                四季折々の食材と向き合ってまいりました。
+                四季折々の食材を提供しております。
                 <br />
                 <br />
-                地場産の天然きのこを100%使用した名物「きのこ鍋」、
-                極上の馬刺し、冬の贅沢「河豚料理」。
-                職人の技と真心で、季節の味覚を最高の形でお届けします。
+                春は山菜、夏は鱧、秋は天然きのこ、冬は河豚やクエ。
+                <br />
+                一年を通して、その時期にしか味わえない旬の味覚をお届けします。
               </p>
             </FadeIn>
             <FadeIn delay={400}>
@@ -147,30 +189,6 @@ export default function Home() {
             <div className="card group stagger-item">
               <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
                 <Image
-                  src="/images/kinoko_nabe_enhanced.png"
-                  alt="名物 きのこ鍋"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3
-                  className="text-xl mb-2"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  名物 きのこ鍋
-                </h3>
-                <p className="text-[#555555] text-sm mb-3">
-                  地場産の天然きのこを100%使用。松茸、アカヤマドリなど
-                  秋の恵みを存分にお楽しみください。
-                </p>
-              </div>
-            </div>
-
-            {/* 料理カード2 */}
-            <div className="card group stagger-item">
-              <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
-                <Image
                   src="/images/basashi-retouched.png"
                   alt="極上 馬刺し"
                   fill
@@ -187,6 +205,30 @@ export default function Home() {
                 <p className="text-[#555555] text-sm mb-3">
                   地場産の極上馬刺し。新鮮な赤身の旨みと
                   とろける脂の甘みをご堪能ください。
+                </p>
+              </div>
+            </div>
+
+            {/* 料理カード2 */}
+            <div className="card group stagger-item">
+              <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
+                <Image
+                  src="/images/kue_nabe_enhanced.png"
+                  alt="幻の高級魚 クエ鍋"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3
+                  className="text-xl mb-2"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  幻の高級魚 クエ鍋
+                </h3>
+                <p className="text-[#555555] text-sm mb-3">
+                  脂の乗った濃厚な旨味と、弾力のある白身はまさに絶品。
+                  懐石コースにクエ鍋を合わせた、冬期限定の贅沢なコースです。
                 </p>
               </div>
             </div>
@@ -229,38 +271,81 @@ export default function Home() {
         </div>
       </section>
 
-      {/* お知らせセクション */}
+      {/* SNS・リンク */}
       <section className="section-sm bg-[#F5F2EB]">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <FadeIn>
               <h2
-                className="text-xl mb-6 text-center"
+                className="text-xl mb-8 text-center"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                お知らせ
+                公式SNS・食べログ
               </h2>
             </FadeIn>
+
             <FadeIn delay={200}>
-              <div className="space-y-4">
-                <div className="flex items-baseline gap-4 p-4 bg-white rounded shadow-sm">
-                  <span className="text-[#555555] w-20 shrink-0">2025.01</span>
-                  <p className="text-[#333333]">
-                    新年のご挨拶：本年もきく蔵をよろしくお願いいたします。
-                  </p>
-                </div>
-                <div className="flex items-baseline gap-4 p-4 bg-white rounded shadow-sm">
-                  <span className="text-[#555555] w-20 shrink-0">2024.12</span>
-                  <p className="text-[#333333]">
-                    年末年始の営業について：12/31〜1/3はお休みをいただきます。
-                  </p>
-                </div>
-                <div className="flex items-baseline gap-4 p-4 bg-white rounded shadow-sm">
-                  <span className="text-[#555555] w-20 shrink-0">2024.11</span>
-                  <p className="text-[#333333]">
-                    食べログ「日本料理 EAST 百名店 2025」に選出されました。
-                  </p>
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Instagram Button */}
+                <a
+                  href="https://www.instagram.com/kikuzou.taku/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-5 p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-[#E1306C]/30 relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+                  <div className="w-14 h-14 flex items-center justify-center bg-gray-50 rounded-full group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                    <img
+                      src="/images/インスタロゴ-removebg-preview.png"
+                      alt="Instagram"
+                      className="w-8 h-8 object-contain"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-xs text-[#E1306C] font-bold tracking-wider mb-1">OFFICIAL INSTAGRAM</p>
+                    <p className="text-lg font-medium text-[#333333]" style={{ fontFamily: "var(--font-serif)" }}>
+                      公式インスタグラム
+                    </p>
+                    <p className="text-xs text-[#888888] mt-1">季節の料理やお店の様子を発信中</p>
+                  </div>
+                  <div className="text-[#CCCCCC] group-hover:text-[#E1306C] transition-colors">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </a>
+
+                {/* Tabelog Button */}
+                <a
+                  href="https://tabelog.com/nagano/A2002/A200201/20000774/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-5 p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-[#FA8100]/30 relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-[#FA8100] opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+                  <div className="w-14 h-14 flex items-center justify-center bg-gray-50 rounded-full group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                    <svg
+                      className="w-8 h-8 text-[#FA8100]"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-label="食べログ"
+                    >
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-xs text-[#FA8100] font-bold tracking-wider mb-1">TABELOG</p>
+                    <p className="text-lg font-medium text-[#333333]" style={{ fontFamily: "var(--font-serif)" }}>
+                      食べログ
+                    </p>
+                    <p className="text-xs text-[#888888] mt-1">ネット予約・口コミはこちらから</p>
+                  </div>
+                  <div className="text-[#CCCCCC] group-hover:text-[#FA8100] transition-colors">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </a>
               </div>
             </FadeIn>
           </div>
@@ -311,7 +396,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-[#B8860B] text-sm mb-1">定休日</p>
-                    <p>日曜日</p>
+                    <p>日曜日<br /><span className="text-xs">※月曜日が祝日の場合は、日曜営業・月曜休業となります。</span></p>
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">

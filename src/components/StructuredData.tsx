@@ -3,16 +3,16 @@ export default function StructuredData() {
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "@id": "https://kikuzou.vercel.app/#restaurant",
-        name: "割烹・季節料理 きく蔵",
+        name: "味処 きく蔵",
         alternateName: "きく蔵",
         description:
-            "創業1970年、長野県松本市の老舗割烹料理店。食べログ日本料理百名店選出。地場産の天然きのこを使用したきのこ鍋、極上の馬刺し、季節の河豚料理など四季折々の味覚をお楽しみください。",
+            "創業1970年、長野県松本市の老舗日本料理店。食べログ日本料理百名店選出。地場産の天然きのこを使用したきのこ鍋、極上の馬刺し、季節の河豚料理など四季折々の味覚をお楽しみください。",
         url: "https://kikuzou.vercel.app",
         telephone: "+81-263-36-3728",
         email: "",
         image: "https://kikuzou.vercel.app/images/og-image.png",
         priceRange: "¥6,000～¥15,000",
-        servesCuisine: ["日本料理", "割烹", "懐石料理", "和食"],
+        servesCuisine: ["日本料理", "味処", "懐石料理", "和食"],
         address: {
             "@type": "PostalAddress",
             streetAddress: "大手4丁目7-10",
@@ -68,7 +68,7 @@ export default function StructuredData() {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "@id": "https://kikuzou.vercel.app/#localbusiness",
-        name: "割烹・季節料理 きく蔵",
+        name: "味処 きく蔵",
         image: "https://kikuzou.vercel.app/images/og-image.png",
         telephone: "+81-263-36-3728",
         address: {
