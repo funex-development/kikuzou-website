@@ -20,7 +20,7 @@ export function FadeIn({
     className = "",
     delay = 0,
     direction = "up",
-    duration = 700,
+    duration = 600,
     threshold = 0.1,
 }: FadeInProps) {
     const ref = useRef<HTMLDivElement>(null);
@@ -42,7 +42,7 @@ export function FadeIn({
                     }
                 });
             },
-            { threshold, rootMargin: "0px 0px -50px 0px" }
+            { threshold, rootMargin: "0px 0px 0px 0px" }
         );
 
         observer.observe(element);

@@ -11,8 +11,17 @@ export default function AccessPage() {
     return (
         <>
             {/* ページヘッダー */}
-            <section className="pt-32 pb-16 bg-[#333333] flex items-center justify-center">
-                <div className="container mx-auto px-4 lg:px-6 text-center">
+            <section className="relative pt-32 pb-16 flex items-center justify-center overflow-hidden bg-[#1a1a1a]">
+                <div
+                    className="absolute inset-0 z-0 opacity-50"
+                    style={{
+                        backgroundImage: "url('/images/page-pattern.png')",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                />
+                <div className="absolute inset-0 bg-black/60 z-0" />
+                <div className="container mx-auto px-4 lg:px-6 text-center relative z-10">
                     <h1
                         className="text-3xl md:text-4xl lg:text-5xl mb-4"
                         style={{ fontFamily: "var(--font-serif)", color: "#B8860B" }}
@@ -119,7 +128,7 @@ export default function AccessPage() {
                                             </span>
                                             電車でお越しの方
                                         </h3>
-                                        <p className="text-[#555555] text-sm pl-7">
+                                        <p className="text-[#333333] text-sm pl-7">
                                             JR松本駅「お城口」より徒歩約15分
                                             <br />
                                             松本大手郵便局近く
@@ -132,7 +141,7 @@ export default function AccessPage() {
                                             </span>
                                             松本城からお越しの方
                                         </h3>
-                                        <p className="text-[#555555] text-sm pl-7">
+                                        <p className="text-[#333333] text-sm pl-7">
                                             松本城より徒歩約5分
                                         </p>
                                     </div>
@@ -143,7 +152,7 @@ export default function AccessPage() {
                                             </span>
                                             お車でお越しの方
                                         </h3>
-                                        <p className="text-[#555555] text-sm pl-7">
+                                        <p className="text-[#333333] text-sm pl-7">
                                             長野自動車道 松本ICより約15分
                                             <br />
                                             <span className="text-[#8B2500]">
@@ -165,14 +174,14 @@ export default function AccessPage() {
                             >
                                 近隣駐車場のご案内
                             </h2>
-                            <p className="text-[#555555] mb-4">
+                            <p className="text-[#333333] mb-4">
                                 当店には専用駐車場がございません。お車でお越しの際は、
                                 近隣のコインパーキングをご利用ください。
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="p-4 bg-[#F5F2EB] rounded">
                                     <p className="font-medium text-sm">松本市営大手門駐車場</p>
-                                    <p className="text-xs text-[#555555] mt-1">
+                                    <p className="text-xs text-[#333333] mt-1">
                                         当店より徒歩約3分
                                     </p>
                                 </div>

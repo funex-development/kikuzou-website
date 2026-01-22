@@ -253,8 +253,17 @@ export default function MenuPage() {
     return (
         <>
             {/* ページヘッダー */}
-            <section className="pt-32 pb-12 bg-[#333333] flex items-center justify-center">
-                <div className="container mx-auto px-4 lg:px-6 text-center">
+            <section className="relative pt-32 pb-12 flex items-center justify-center overflow-hidden bg-[#1a1a1a]">
+                <div
+                    className="absolute inset-0 z-0 opacity-50"
+                    style={{
+                        backgroundImage: "url('/images/page-pattern.png')",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                />
+                <div className="absolute inset-0 bg-black/60 z-0" />
+                <div className="container mx-auto px-4 lg:px-6 text-center relative z-10">
                     <FadeIn>
                         <h1
                             className="text-3xl md:text-4xl lg:text-5xl mb-4"
@@ -319,7 +328,7 @@ export default function MenuPage() {
                                 <div className="section-title">
                                     <h2 style={{ fontFamily: "var(--font-serif)" }}>コース料理</h2>
                                     <p>ご予約は3日前までにお願いいたします</p>
-                                    <p className="text-sm text-[#555555] mt-4">
+                                    <p className="text-sm text-[#333333] mt-4">
                                         ※ 表示価格は税込です
                                         <span className="mx-2">|</span>
                                         ※ 宴会は12名様までとなります
@@ -370,8 +379,8 @@ export default function MenuPage() {
                                                                 ))}
                                                             </div>
                                                         </div>
-                                                        <p className="text-[#555555] mb-4">{course.description}</p>
-                                                        <div className="flex flex-col gap-2 text-sm text-[#555555]">
+                                                        <p className="text-[#333333] mb-4">{course.description}</p>
+                                                        <div className="flex flex-col gap-2 text-sm text-[#333333]">
                                                             <span className="flex items-center gap-1">
                                                                 <span className="text-[#B8860B]">●</span>
                                                                 {course.items}
@@ -404,7 +413,7 @@ export default function MenuPage() {
                                         一品料理
                                     </h2>
                                     <p>旬の素材を活かした逸品をご用意しております</p>
-                                    <p className="text-sm text-[#555555] mt-4">※ 表示価格は税込です</p>
+                                    <p className="text-sm text-[#333333] mt-4">※ 表示価格は税込です</p>
                                 </div>
 
                                 <div className="max-w-4xl mx-auto space-y-4">
@@ -450,7 +459,7 @@ export default function MenuPage() {
                                                                             <span className="text-[#B8860B] whitespace-nowrap font-serif tracking-wide">{item.price}</span>
                                                                         </div>
                                                                         {item.description && (
-                                                                            <p className="text-sm text-[#777] leading-relaxed">{item.description}</p>
+                                                                            <p className="text-sm text-[#444444] leading-relaxed">{item.description}</p>
                                                                         )}
                                                                     </div>
                                                                 </div>
@@ -465,7 +474,7 @@ export default function MenuPage() {
 
                                 <FadeIn delay={300}>
                                     <div className="text-center mt-12 p-6 bg-[#F9F9F9] rounded-lg max-w-2xl mx-auto">
-                                        <p className="text-sm text-[#555555] leading-loose">
+                                        <p className="text-sm text-[#333333] leading-loose">
                                             ※ 仕入れ状況により内容や価格が変更になる場合がございます。
                                             <br />
                                             ※ アレルギー食材などがございましたら、お気軽にご相談ください。
@@ -485,7 +494,7 @@ export default function MenuPage() {
                                 <div className="section-title">
                                     <h2 style={{ fontFamily: "var(--font-serif)" }}>お飲み物</h2>
                                     <p>料理の味わいを深める銘酒の数々</p>
-                                    <p className="text-sm text-[#555555] mt-4">※ 表示価格は税込です</p>
+                                    <p className="text-sm text-[#333333] mt-4">※ 表示価格は税込です</p>
                                 </div>
 
                                 <div className="max-w-4xl mx-auto space-y-4">
@@ -520,7 +529,7 @@ export default function MenuPage() {
                                                                         {/* @ts-ignore */}
                                                                         {item.description && (
                                                                             /* @ts-ignore */
-                                                                            <p className="text-sm text-[#777] leading-relaxed">{item.description}</p>
+                                                                            <p className="text-sm text-[#444444] leading-relaxed">{item.description}</p>
                                                                         )}
                                                                     </div>
                                                                 </div>
@@ -535,7 +544,7 @@ export default function MenuPage() {
 
                                 <FadeIn delay={300}>
                                     <div className="text-center mt-12 p-6 bg-[#F9F9F9] rounded-lg max-w-2xl mx-auto">
-                                        <p className="text-sm text-[#555555] leading-loose">
+                                        <p className="text-sm text-[#333333] leading-loose">
                                             ※ 銘柄は季節や仕入れ状況により異なります。
                                             <br />
                                             ※ ワインリストなど、その他のドリンクは店内にてご確認ください。

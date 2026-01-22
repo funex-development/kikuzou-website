@@ -14,12 +14,15 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* 背景：モバイルは画像、PCは動画 */}
         <div className="absolute inset-0 bg-[#333333]">
-          {/* モバイル用画像 */}
-          <img
-            src="/images/hero-mobile.jpg"
-            alt="きく蔵 店舗外観"
-            className="w-full h-full object-cover md:hidden"
-            style={{ objectPosition: 'center 35%' }}
+          {/* モバイル用背景画像 */}
+          <div
+            className="absolute inset-0 md:hidden"
+            style={{
+              backgroundImage: 'url(/images/hero-mobile.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center center',
+              backgroundRepeat: 'no-repeat'
+            }}
           />
           {/* PC用動画 */}
           <video
@@ -42,7 +45,7 @@ export default function Home() {
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-screen">
           {/* テキストコンテンツ */}
           <div className="mt-16 md:mt-0">
-            <FadeIn delay={200} duration={800}>
+            <FadeIn delay={300} duration={800}>
               <p
                 className="text-sm md:text-base tracking-[0.3em] mb-4 text-[#B8860B]"
                 style={{ fontFamily: "var(--font-serif)" }}
@@ -50,7 +53,7 @@ export default function Home() {
                 創業1970年 ― 食べログ百名店
               </p>
             </FadeIn>
-            <FadeIn delay={400} duration={1000}>
+            <FadeIn delay={200} duration={1000}>
               <h1
                 className="text-4xl md:text-6xl lg:text-7xl font-medium mb-6 tracking-wider"
                 style={{ fontFamily: "var(--font-serif)", color: "#B8860B" }}
@@ -60,7 +63,7 @@ export default function Home() {
                 <span className="text-5xl md:text-7xl lg:text-8xl">きく蔵</span>
               </h1>
             </FadeIn>
-            <FadeIn delay={600} duration={800}>
+            <FadeIn delay={300} duration={800}>
               <p
                 className="text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto opacity-90"
                 style={{ fontFamily: "var(--font-sans)" }}
@@ -71,8 +74,7 @@ export default function Home() {
                 信州松本の旬をお届けします
               </p>
             </FadeIn>
-            {/* PC用ボタン - テキストと一緒に表示 */}
-            <FadeIn delay={800} duration={800}>
+            <FadeIn delay={400} duration={800}>
               <div className="hidden md:flex flex-row gap-4 justify-center">
                 <Link
                   href="/reserve"
@@ -94,7 +96,7 @@ export default function Home() {
 
         {/* モバイル用ボタン - セクションに対して下部に配置 */}
         <div className="md:hidden absolute bottom-24 left-0 right-0 z-20 px-4">
-          <FadeIn delay={800} duration={800}>
+          <FadeIn delay={400} duration={800}>
             <div className="flex flex-col gap-4 justify-center items-center max-w-sm mx-auto">
               <Link
                 href="/reserve"
@@ -144,7 +146,7 @@ export default function Home() {
             </FadeIn>
             <FadeIn delay={200}>
               <p
-                className="text-lg leading-relaxed text-[#555555] mb-8"
+                className="text-lg leading-relaxed text-[#333333] mb-8"
                 style={{ fontFamily: "var(--font-sans)" }}
               >
                 四季折々の食材を提供しております。
@@ -155,15 +157,15 @@ export default function Home() {
                 一年を通して、その時期にしか味わえない旬の味覚をお届けします。
               </p>
             </FadeIn>
-            <FadeIn delay={400}>
+            <FadeIn delay={200}>
               <div className="flex flex-wrap justify-center gap-4 mt-8">
                 <span className="px-4 py-2 bg-white rounded text-sm text-[#333333] shadow-sm">
                   百名店 2021・2023・2025
                 </span>
-                <span className="px-4 py-2 bg-white rounded text-sm text-[#555555] shadow-sm">
+                <span className="px-4 py-2 bg-white rounded text-sm text-[#333333] shadow-sm">
                   個室完備
                 </span>
-                <span className="px-4 py-2 bg-white rounded text-sm text-[#555555] shadow-sm">
+                <span className="px-4 py-2 bg-white rounded text-sm text-[#333333] shadow-sm">
                   接待・記念日に
                 </span>
               </div>
@@ -202,7 +204,7 @@ export default function Home() {
                 >
                   極上 馬刺し
                 </h3>
-                <p className="text-[#555555] text-sm mb-3">
+                <p className="text-[#333333] text-sm mb-3">
                   地場産の極上馬刺し。新鮮な赤身の旨みと
                   とろける脂の甘みをご堪能ください。
                 </p>
@@ -226,7 +228,7 @@ export default function Home() {
                 >
                   幻の高級魚 クエ鍋
                 </h3>
-                <p className="text-[#555555] text-sm mb-3">
+                <p className="text-[#333333] text-sm mb-3">
                   脂の乗った濃厚な旨味と、弾力のある白身はまさに絶品。
                   懐石コースにクエ鍋を合わせた、冬期限定の贅沢なコースです。
                 </p>
@@ -250,7 +252,7 @@ export default function Home() {
                 >
                   冬の贅沢 河豚コース
                 </h3>
-                <p className="text-[#555555] text-sm mb-3">
+                <p className="text-[#333333] text-sm mb-3">
                   九州直送の最高級トラフグ。てっさ、ふぐちり、
                   白子焼きなど冬の味覚をコースで。
                 </p>

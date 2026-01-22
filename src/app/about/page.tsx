@@ -75,8 +75,17 @@ export default function AboutPage() {
     return (
         <>
             {/* ページヘッダー */}
-            <section className="pt-32 pb-16 bg-[#333333] flex items-center justify-center">
-                <div className="container mx-auto px-4 lg:px-6 text-center">
+            <section className="relative pt-32 pb-16 flex items-center justify-center overflow-hidden bg-[#1a1a1a]">
+                <div
+                    className="absolute inset-0 z-0 opacity-50"
+                    style={{
+                        backgroundImage: "url('/images/page-pattern.png')",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                />
+                <div className="absolute inset-0 bg-black/60 z-0" />
+                <div className="container mx-auto px-4 lg:px-6 text-center relative z-10">
                     <FadeIn>
                         <h1
                             className="text-3xl md:text-4xl lg:text-5xl mb-4"
@@ -109,7 +118,7 @@ export default function AboutPage() {
                                         <br />
                                         ちょっと隠れた名店
                                     </h2>
-                                    <div className="space-y-4 text-[#555555]">
+                                    <div className="space-y-4 text-[#333333]">
                                         <p>
                                             1970年5月、松本城近くの「東小路」に、きく蔵は誕生しました。
                                             以来半世紀以上にわたり、地元のお客様から観光でいらっしゃるお客様まで、
@@ -151,7 +160,7 @@ export default function AboutPage() {
                     <FadeIn>
                         <div className="section-title">
                             <h2 style={{ fontFamily: "var(--font-serif)" }}>私たちのこだわり</h2>
-                            <p className="mt-4 text-[#555555]">
+                            <p className="mt-4 text-[#333333]">
                                 上質な時間を過ごしていただける空間作り。
                                 <br />
                                 心地よいサービスの提供
@@ -175,7 +184,7 @@ export default function AboutPage() {
                                     >
                                         {feature.title}
                                     </h3>
-                                    <div className="text-sm text-[#555555] leading-relaxed">
+                                    <div className="text-sm text-[#333333] leading-relaxed">
                                         {feature.description}
                                     </div>
                                 </div>
@@ -208,7 +217,7 @@ export default function AboutPage() {
                                     />
                                 </div>
                                 <h3 className="text-lg font-medium mb-2 text-[#8B2500]" style={{ fontFamily: "var(--font-serif)" }}>カウンター席</h3>
-                                <p className="text-sm text-[#555555] leading-relaxed">
+                                <p className="text-sm text-[#333333] leading-relaxed">
                                     居心地のよいカウンター席。<br />
                                     お一人様でも気兼ねなく、ゆったりとお寛ぎいただけます。職人の技を間近で楽しめる特等席です。
                                 </p>
@@ -225,7 +234,7 @@ export default function AboutPage() {
                                     />
                                 </div>
                                 <h3 className="text-lg font-medium mb-2 text-[#8B2500]" style={{ fontFamily: "var(--font-serif)" }}>個室</h3>
-                                <p className="text-sm text-[#555555] leading-relaxed">
+                                <p className="text-sm text-[#333333] leading-relaxed">
                                     3～6名様収容可能な個室を3室ご用意しております。<br />
                                     接待やご会食、ご家族での団欒など、プライベートな時間を大切にしたい場面に最適です。
                                 </p>
@@ -242,7 +251,7 @@ export default function AboutPage() {
                                     />
                                 </div>
                                 <h3 className="text-lg font-medium mb-2 text-[#8B2500]" style={{ fontFamily: "var(--font-serif)" }}>座敷</h3>
-                                <p className="text-sm text-[#555555] leading-relaxed">
+                                <p className="text-sm text-[#333333] leading-relaxed">
                                     最大12名様まで収容可能な広間をご用意しております。<br />
                                     落ち着きのある和の空間は、各種ご宴会や法事、お祝いのお席など、大人数でのお集まりにおすすめです。
                                 </p>
@@ -254,19 +263,19 @@ export default function AboutPage() {
                                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                                     <div>
                                         <p className="text-2xl font-medium text-[#8B2500]">38</p>
-                                        <p className="text-sm text-[#555555]">席</p>
+                                        <p className="text-sm text-[#333333]">席</p>
                                     </div>
                                     <div>
                                         <p className="text-2xl font-medium text-[#8B2500]">4</p>
-                                        <p className="text-sm text-[#555555]">個室</p>
+                                        <p className="text-sm text-[#333333]">個室</p>
                                     </div>
                                     <div>
                                         <p className="text-2xl font-medium text-[#8B2500]">12</p>
-                                        <p className="text-sm text-[#555555]">最大着席人数</p>
+                                        <p className="text-sm text-[#333333]">最大着席人数</p>
                                     </div>
                                     <div>
                                         <p className="text-2xl font-medium text-[#8B2500]">✓</p>
-                                        <p className="text-sm text-[#555555]">カウンター席</p>
+                                        <p className="text-sm text-[#333333]">カウンター席</p>
                                     </div>
                                 </div>
                             </div>
@@ -301,7 +310,7 @@ export default function AboutPage() {
 
                         <FadeIn delay={400}>
                             <div className="mt-8 p-6 bg-gradient-to-r from-[#B8860B]/10 to-[#B8860B]/5 rounded border border-[#B8860B]/20">
-                                <p className="text-center text-[#555555]">
+                                <p className="text-center text-[#333333]">
                                     おかげさまで、食べログ日本料理百名店に
                                     <br className="md:hidden" />
                                     <span className="font-medium text-[#8B2500]">3度</span>

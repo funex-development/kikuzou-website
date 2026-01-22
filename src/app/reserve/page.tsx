@@ -15,8 +15,17 @@ export default function ReservePage() {
 
 
             {/* ページヘッダー */}
-            <section className="pt-32 pb-16 bg-[#333333] flex items-center justify-center">
-                <div className="container mx-auto px-4 lg:px-6 text-center">
+            <section className="relative pt-32 pb-16 flex items-center justify-center overflow-hidden bg-[#1a1a1a]">
+                <div
+                    className="absolute inset-0 z-0 opacity-50"
+                    style={{
+                        backgroundImage: "url('/images/page-pattern.png')",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                />
+                <div className="absolute inset-0 bg-black/60 z-0" />
+                <div className="container mx-auto px-4 lg:px-6 text-center relative z-10">
                     <h1
                         className="text-3xl md:text-4xl lg:text-5xl mb-4"
                         style={{ fontFamily: "var(--font-serif)", color: "#B8860B" }}
@@ -47,7 +56,7 @@ export default function ReservePage() {
                                 >
                                     お電話でのご予約
                                 </h2>
-                                <p className="text-[#555555] text-sm mb-6">
+                                <p className="text-[#333333] text-sm mb-6">
                                     4名様以上、お子様連れ、<br />
                                     ネット予約が満席の場合はお電話ください
                                 </p>
@@ -57,7 +66,7 @@ export default function ReservePage() {
                                 >
                                     0263-36-3728
                                 </a>
-                                <p className="text-sm text-[#555555]">
+                                <p className="text-sm text-[#333333]">
                                     受付時間：17:30〜22:00（日曜定休）
                                 </p>
                             </div>
@@ -75,7 +84,7 @@ export default function ReservePage() {
                                 >
                                     ネット予約
                                 </h2>
-                                <p className="text-[#555555] text-sm mb-6">
+                                <p className="text-[#333333] text-sm mb-6">
                                     食べログから24時間<br />
                                     ご予約いただけます
                                 </p>
@@ -87,7 +96,7 @@ export default function ReservePage() {
                                 >
                                     食べログで予約する
                                 </a>
-                                <p className="text-xs text-[#555555] mt-4">
+                                <p className="text-xs text-[#333333] mt-4">
                                     ※ 外部サイトに移動します
                                 </p>
                             </div>
@@ -133,7 +142,7 @@ export default function ReservePage() {
                                     <span className="text-[#8B2500]">●</span>
                                     コース料理のご予約
                                 </h3>
-                                <p className="text-[#555555] text-sm pl-5">
+                                <p className="text-[#333333] text-sm pl-5">
                                     コース料理は3日前までにご予約ください。
                                     <br />
                                     宴会は12名様までとなります。
@@ -145,7 +154,7 @@ export default function ReservePage() {
                                     <span className="text-[#8B2500]">●</span>
                                     お子様連れのお客様
                                 </h3>
-                                <p className="text-[#555555] text-sm pl-5">
+                                <p className="text-[#333333] text-sm pl-5">
                                     お子様連れでのご予約はお電話にてお願いいたします。
                                     <br />
                                     個室のご案内などもさせていただきます。
@@ -157,7 +166,7 @@ export default function ReservePage() {
                                     <span className="text-[#8B2500]">●</span>
                                     滞在時間
                                 </h3>
-                                <p className="text-[#555555] text-sm pl-5">
+                                <p className="text-[#333333] text-sm pl-5">
                                     混雑状況により、お席の滞在時間を2時間までとさせていただく場合がございます。
                                 </p>
                             </div>

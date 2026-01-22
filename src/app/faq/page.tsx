@@ -51,8 +51,17 @@ export default function FAQPage() {
             <FAQStructuredData faqs={faqs} />
 
             {/* ページヘッダー */}
-            <section className="pt-32 pb-16 bg-[#333333] flex items-center justify-center">
-                <div className="container mx-auto px-4 lg:px-6 text-center">
+            <section className="relative pt-32 pb-16 flex items-center justify-center overflow-hidden bg-[#1a1a1a]">
+                <div
+                    className="absolute inset-0 z-0 opacity-50"
+                    style={{
+                        backgroundImage: "url('/images/page-pattern.png')",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                />
+                <div className="absolute inset-0 bg-black/60 z-0" />
+                <div className="container mx-auto px-4 lg:px-6 text-center relative z-10">
                     <h1
                         className="text-3xl md:text-4xl lg:text-5xl mb-4"
                         style={{ fontFamily: "var(--font-serif)", color: "#B8860B" }}
@@ -82,7 +91,7 @@ export default function FAQPage() {
                                         </span>
                                     </summary>
                                     <div className="px-4 md:px-6 pb-4 md:pb-6 pt-0">
-                                        <p className="text-[#555555] text-sm leading-relaxed">
+                                        <p className="text-[#333333] text-sm leading-relaxed">
                                             {faq.answer}
                                         </p>
                                     </div>
