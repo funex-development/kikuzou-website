@@ -65,90 +65,72 @@ const courses = [
 
 const alacarteMenu = [
     {
-        category: "きく蔵の人気メニュー",
-        items: [
-            { name: "極上馬刺し", price: "1,650円", description: "地場産の最高級の馬刺しです。部位はその日の仕入れ状況により変わります。", image: "/images/basashi-premium.jpg" },
-            { name: "馬タンお刺身", price: "1,650円", description: "珍しい馬の舌のお刺身です。こりこりした歯ごたえがあり、さっぱりとしたお刺身です。", image: "/images/basashi-tongue.jpg" },
-            { name: "筍まんじゅう(12月～5月位)", price: "950円", description: "皮にふんだんの筍を使い、具はひき肉に椎茸、そして筍。当店オリジナルの人気料理。季節料理になります。", image: "/images/takenoko-manju.jpg" },
-            { name: "松本山賊焼き", price: "1,200円", description: "松本名物の山賊焼きです。鳥のもも肉を開き一枚丸ごと出汁に漬け豪快に揚げています。ボリュームもあり、満足していただけます。", image: "/images/sanzoku-yaki.jpg" },
-            { name: "焼き大アサリ", price: "1,320円", description: "愛知県は知多半島で獲れる貝です。大きさにビックリ、美味しさにビックリして下さい。季節限定商品になります。" },
-            { name: "信州プレミアム牛の溶岩焼き", price: "2,900円", description: "信州牛は餌にリンゴを混ぜているため、甘みがあり、たいへん美味しいお肉となっております。部位は最高級の三角バラを使用しております。", image: "/images/premium-beef-lava.jpg" },
-            { name: "自家製さつま揚げ", price: "950円", description: "最高級のすり身を使い具には蛸や木耳、干し椎茸に人参や絹さや、彩も最高です。", image: "/images/satsuma-age.jpg" },
-            { name: "小芋照り煮", price: "600円", image: "/images/koimo-terini.jpg" },
-            { name: "焼きアスパラ", price: "770円", image: "/images/yaki-aspara.jpg" },
-            { name: "鷹山ニンニクの天ぷら", price: "850円", description: "ニンニクを1回バラして水耕栽培されたニンニクです。その為、芽と根があります。とても美味。", image: "/images/takayama-ninniku.jpg" },
-            { name: "焼きタケノコ", price: "1,500円", description: "季節限定になります。", image: "/images/yaki-takenoko.jpg" },
-            { name: "ソフトシェルクラブ", price: "1,320円", description: "脱皮したてのカニをカラッと揚げています。殻ごと食べられるカニです。", image: "/images/soft-shell-crab.jpg" },
-        ]
-    },
-    {
         category: "お刺身",
         items: [
-            { name: "刺身盛り合わせ", price: "2,200円より", description: "まぐろ赤身・中トロ・生たこ・さより・平目・ホッキ貝・赤貝・甘エビなど鮮度バツグンの魚介を揃えております。", image: "/images/sashimi.jpg" },
-            { name: "極上馬刺し", price: "1,650円", description: "地場産の最高級馬刺し。ヒレとロースの２種盛りなど、その日の仕入れ状況により変わる場合がございます。", image: "/images/basashi-premium.jpg" },
-            { name: "天然岩ガキ", price: "1,650円" },
-            { name: "馬レバー刺し", price: "1,650円", description: "レバーは鮮度が命。年に数回しか入荷できない幻の馬レバーです。", image: "/images/sashimi-assorted.jpg" },
-        ]
-    },
-    {
-        category: "酢の物",
-        items: [
-            { name: "ふぐ皮酢", price: "900円" },
-            { name: "もずく酢", price: "600円" },
+            { name: "刺身盛り合わせ", price: "2,200円より", description: "※その日の仕入れ状況により内容が変わります。" },
+            { name: "本マグロ赤身・中トロ", price: "" },
+            { name: "平目刺身", price: "" },
+            { name: "生タコ刺身", price: "" },
+            { name: "甘エビ刺身", price: "" },
+            { name: "ボタン海老刺身", price: "" },
+            { name: "赤貝刺身", price: "" },
+            { name: "ツブ貝刺身", price: "" },
+            { name: "極上馬刺し", price: "1,650円" },
+            { name: "鹿刺身", price: "1,320円" },
         ]
     },
     {
         category: "焼き物",
         items: [
-            { name: "氷下魚", price: "700円" },
-            { name: "北海ししゃも", price: "1,320円" },
-            { name: "自家製鮎一夜干", price: "950円" },
-            { name: "焼き大あさり", price: "1,320円" },
-            { name: "きんき塩焼きor煮付け", price: "3,500円〜", description: "その日入荷された大きさにより価格変動いたします。" },
-            { name: "のどぐろ塩焼きor煮付け", price: "3,500円〜", description: "その日入荷された大きさにより価格変動いたします。", image: "/images/nodoguro-shioyaki.jpg" },
-            { name: "信州牛の溶岩焼き", price: "2,900円", image: "/images/premium-beef-lava.jpg" },
+            { name: "信州牛石焼", price: "2,900円" },
             { name: "アワビステーキ", price: "3,300円" },
+            { name: "きんき（塩焼き・煮付け）", price: "3,500円より" },
+            { name: "のどぐろ（塩焼き・煮付け）", price: "3,500円より" },
+            { name: "北海ししゃも", price: "1,320円" },
+            { name: "氷下魚（こまい）", price: "770円" },
+            { name: "焼きアスパラ", price: "770円" },
+            { name: "自家製鴨スモーク", price: "1,200円" },
         ]
     },
     {
         category: "揚げ物・天ぷら",
         items: [
-            { name: "筍まんじゅう", price: "950円", description: "生地にたっぷりのタケノコを使い中にはそぼろのお肉を包んだ当店オリジナルのお饅頭です。季節商品になりますが、大人気の一品です。", image: "/images/takenoko-manju.jpg" },
-            { name: "松本山賊焼き", price: "1,320円", description: "鳥モモ肉を1枚丸ごと特製のタレに漬けこみ豪快に揚げた、郷土料理。外はサクサク、中はジューシーです。", image: "/images/sanzoku-yaki.jpg" },
-            { name: "海老変わり揚げ", price: "1,320円" },
-            { name: "たこ唐揚げ", price: "770円", image: "/images/taco.jpg" },
-            { name: "かじか唐揚げ", price: "1,320円", image: "/images/kazika.jpg" },
-            { name: "ソフトシェルクラブ", price: "1,320円", image: "/images/soft-shell-crab.jpg" },
-            { name: "穴子天ぷら", price: "1,650円" },
+            { name: "松本山賊焼き", price: "1,320円" },
             { name: "車海老天ぷら", price: "1,650円" },
-            { name: "鷹山にんにくの天ぷら", price: "850円" },
+            { name: "穴子天ぷら", price: "1,650円" },
+            { name: "鷹山ニンニクの天ぷら", price: "850円" },
+            { name: "ソフトシェルクラブ", price: "1,320円" },
+            { name: "かじか唐揚", price: "1,320円" },
             { name: "鹿竜田揚げ", price: "1,320円" },
-            { name: "自家製さつま揚げ", price: "950円", description: "最高級のすり身に、タコ、シイタケ、キクラゲ、人参、絹さやなど、具沢山のさつま揚げです。", image: "/images/satsuma-age.jpg" },
+            { name: "自家製さつま揚", price: "950円" },
+            { name: "海老変わり揚", price: "1,320円" },
+            { name: "たこ唐揚", price: "770円" },
         ]
     },
     {
-        category: "その他",
+        category: "一品・その他",
         items: [
-            { name: "焼きアスパラ", price: "770円", image: "/images/asupara.jpg" },
-            { name: "フルーツトマト", price: "800円" },
-            { name: "自家製からすみ", price: "1,650円", image: "/images/karasumi2.jpg" },
-            { name: "自家製鴨スモーク", price: "1,200円" },
-            { name: "鯖のへしこ(2年物)", price: "850円", description: "鯖を糠に漬けて作られた商品。塩分が強い為、少しづつお召し上がりください。日本酒にはぴったりの一品です。" },
-            { name: "小芋照り煮", price: "600円", image: "/images/koimo-terini.jpg" },
-            { name: "しめ鯖", price: "750円" },
-            { name: "いぶりがっこチーズ包み", price: "660円" },
-            { name: "フグのカルパッチョ", price: "990円" },
+            { name: "新ジャガ照煮", price: "600円" },
+            { name: "ふぐのカルパッチョ", price: "990円" },
+            { name: "岩ガキ (夏)", price: "1,320円より" },
+            { name: "真ガキ (冬)", price: "1,100円より" },
+            { name: "もずく酢", price: "600円" },
+            { name: "サバへしこ（二年物）", price: "770円" },
+            { name: "自家製からすみ", price: "1,650円" },
+            { name: "いぶりがっこチーズ包", price: "660円" },
+            { name: "フルーツトマト", price: "770円" },
+            { name: "お新香", price: "600円" },
         ]
     },
     {
         category: "お食事・〆の逸品",
         items: [
-            { name: "お茶漬け(シャケ・タラコ・梅・のり)", price: "750円" },
-            { name: "おにぎり(1ヶ)", price: "300円" },
-            { name: "焼おにぎり(二ヶ)", price: "700円", image: "/images/onigiri.jpg" },
-            { name: "氷見うどん", price: "800円" },
-            { name: "赤出汁", price: "400円" },
-            { name: "香の物", price: "600円" },
+            { name: "氷見うどん", price: "770円" },
+            { name: "お茶漬け（シャケ・タラコ・梅・のり）", price: "700円" },
+            { name: "おにぎり（1ケ）（シャケ・タラコ・梅・昆布）", price: "300円" },
+            { name: "焼おにぎり（2ケ）", price: "660円" },
+            { name: "ご飯", price: "400円" },
+            { name: "みそ汁", price: "400円" },
         ]
     }
 ];
@@ -157,83 +139,78 @@ const drinkMenu = [
     {
         category: "ビール",
         items: [
-            { name: "瓶ビール [キリン]", price: "850円" },
-            { name: "瓶ビール [アサヒ]", price: "850円" },
-            { name: "瓶ビール [エビス]", price: "850円" },
-            { name: "生ビール（中）", price: "850円" },
-            { name: "生ビール（小）", price: "650円" },
-            { name: "生ビール（グラス）", price: "500円" },
-            { name: "ノンアルコールビール [アサヒドライゼロ]", price: "650円" },
+            { name: "瓶ビール（エビス・キリン・アサヒ）", price: "850円" },
+            { name: "一番搾り生ビール（中）", price: "850円" },
+            { name: "一番搾り生ビール（小）", price: "650円" },
+            { name: "一番搾り生ビール（グラス）", price: "450円" },
+            { name: "ノンアルコールビール", price: "650円" },
+            { name: "ハードシードル", price: "700円" },
         ]
     },
     {
-        category: "信州の地酒",
+        category: "日本酒",
         items: [
-            { name: "いらか 銀", price: "1,320円" },
-            { name: "大信州 辛口特別純米", price: "950円" },
-            { name: "大雪渓 生酒(300ml)", price: "1,320円" },
-            { name: "大雪渓 純米吟醸 槍", price: "950円" },
-            { name: "大雪渓 大吟醸", price: "1,320円" },
-            { name: "夜明け前 吟醸", price: "1,100円" },
-            { name: "佐久の花 純米吟醸", price: "950円" },
-            { name: "御湖鶴 純米吟醸", price: "1,320円" },
-            { name: "美寿々 純米吟醸", price: "950円" },
-        ]
-    },
-    {
-        category: "日本酒・銘酒",
-        items: [
-            { name: "燗酒 [大雪渓(長野) / 両関(秋田)]", price: "600円", description: "2種類からお選びいただけます。" },
+            { name: "燗酒 (両関・大雪渓)", price: "600円" },
             { name: "フグヒレ酒", price: "1,320円" },
-            { name: "〆張鶴 [新潟]", price: "950円" },
-            { name: "緑川 [新潟]", price: "990円" },
-            { name: "作 [三重]", price: "1,100円" },
-            { name: "梅酒", price: "800円", description: "ロック or ソーダ割り" },
-        ]
-    },
-    {
-        category: "酎ハイ・ハイボール",
-        items: [
-            { name: "麦焼酎", price: "770円", description: "ロック、水割り、お湯割り。ソーダ割りは+50円" },
-            { name: "芋焼酎", price: "770円", description: "ロック、水割り、お湯割り。ソーダ割りは+50円" },
-            { name: "梅干し酎", price: "850円" },
-            { name: "ウーロン酎", price: "770円" },
-            { name: "生グレープフルーツ酎", price: "850円" },
-            { name: "すだち酎 (季節限定)", price: "850円" },
-            { name: "角ハイボール", price: "660円" },
-            { name: "おすすめハイボール", price: "880円" },
+            { name: "つぎ酒", price: "600円" },
+            { name: "大雪渓 大吟醸 (一杯)", price: "1,320円" },
+            { name: "大雪渓 生酒 (300ml)", price: "1,350円" },
+            { name: "大雪渓槍 純米吟醸 (一杯)", price: "950円" },
+            { name: "夜明け前 純米吟醸 (一杯)", price: "1,100円" },
+            { name: "甍(いらか)銀(一杯)", price: "1,320円" },
+            { name: "大信州 辛口特別純米 (一杯)", price: "950円" },
+            { name: "佐久の花 純米吟醸 (一杯)", price: "950円" },
+            { name: "御湖鶴 純米吟醸 (一杯)", price: "1,320円" },
+            { name: "美寿々 純米吟醸 (一杯)", price: "950円" },
+            { name: "〆張鶴 (新潟)(一杯)", price: "950円" },
+            { name: "緑川 (新潟)(一杯)", price: "990円" },
+            { name: "作 (三重)(一杯)", price: "1,100円" },
         ]
     },
     {
         category: "焼酎ボトル",
         items: [
-            { name: "【芋】桜島", price: "4,400円" },
-            { name: "【芋】吉兆宝山", price: "4,400円" },
-            { name: "【芋】赤兎馬", price: "4,400円" },
-            { name: "【芋】一刻者（石蔵甕貯蔵）", price: "6,600円" },
-            { name: "【芋】魔王 (数量限定)", price: "6,600円" },
-            { name: "【麦】麦の一粒", price: "4,400円" },
-            { name: "【麦】吉四六（陶器）", price: "5,500円" },
-            { name: "【麦】いいちこ（フラスコ）", price: "6,600円" },
+            { name: "魔王 (数量限定)", price: "7,700円" },
+            { name: "一刻者石蔵甕貯蔵", price: "6,600円" },
+            { name: "吉兆宝山", price: "4,900円" },
+            { name: "赤兎馬", price: "4,400円" },
+            { name: "桜島", price: "4,400円" },
+            { name: "いいちこフラスコ (麦)", price: "6,600円" },
+            { name: "吉四六 陶器 (麦)", price: "5,500円" },
+            { name: "一粒の麦 (麦)", price: "4,400円" },
         ]
     },
     {
-        category: "ワイン",
+        category: "ウイスキー・サワー",
         items: [
-            { name: "五一ワイン (フルボトル) [赤・白]", price: "3,950円" },
-            { name: "五一ワイン (ハーフボトル)", price: "1,980円" },
-            { name: "輸入ワイン各種 [赤・白]", price: "3,980円" },
+            { name: "おすすめのハイボール", price: "880円" },
+            { name: "角ハイボール", price: "660円" },
+            { name: "生グレープフルーツ酎", price: "800円" },
+            { name: "ウーロン酎", price: "770円" },
+            { name: "レモン酎", price: "770円" },
+            { name: "すだち酎 (季節限定)", price: "800円" },
+            { name: "梅干し酎", price: "800円" },
         ]
     },
     {
-        category: "ソフトドリンク",
+        category: "麦焼酎・芋焼酎 (グラス)",
         items: [
-            { name: "オレンジ", price: "400円" },
-            { name: "コーラ", price: "400円" },
-            { name: "サイダー", price: "400円" },
-            { name: "ウーロン茶", price: "400円" },
-            { name: "ノンアルコールカクテル ゼロカク カシス", price: "700円" },
-            { name: "ノンアルコールカクテル ゼロカク シャルドネ", price: "700円" },
+            { name: "麦焼酎 (ロック・水割り・お湯割り)", price: "770円" },
+            { name: "芋焼酎 (ロック・水割り・お湯割り)", price: "770円" },
+        ]
+    },
+    {
+        category: "その他",
+        items: [
+            { name: "宇治抹茶割", price: "770円" },
+            { name: "梅酒 (ソーダ割り)", price: "770円" },
+            { name: "梅酒 (ロック)", price: "700円" },
+            { name: "ノンアルコールカクテル ゼロカク カシス", price: "660円" },
+            { name: "ノンアルコールカクテル ゼロカク シャルドネ", price: "660円" },
+            { name: "ソフトドリンク (コーラ・オレンジ・サイダー・ウーロン茶)", price: "各400円" },
+            { name: "五一ワイン 赤・白 (フルボトル)", price: "3,950円" },
+            { name: "五一ワイン 赤・白 (ハーフボトル)", price: "1,980円" },
+            { name: "輸入ワイン 赤・白", price: "3,950円" },
         ]
     }
 ];
@@ -331,7 +308,7 @@ export default function MenuPage() {
                                     <p className="text-sm text-[#333333] mt-4">
                                         ※ 表示価格は税込です
                                         <span className="mx-2">|</span>
-                                        ※ 宴会は12名様までとなります
+                                        ※ 宴会は4名から12名様までとなります
                                     </p>
                                 </div>
 

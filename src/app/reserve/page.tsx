@@ -145,7 +145,7 @@ export default function ReservePage() {
                                 <p className="text-[#333333] text-sm pl-5">
                                     コース料理は3日前までにご予約ください。
                                     <br />
-                                    宴会は12名様までとなります。
+                                    宴会は4名から12名様までとなります。
                                 </p>
                             </div>
 

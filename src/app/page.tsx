@@ -18,7 +18,7 @@ export default function Home() {
           <div
             className="absolute inset-0 md:hidden"
             style={{
-              backgroundImage: 'url(/images/hero-mobile.jpg)',
+              backgroundImage: 'url(/images/hero-phone2.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               backgroundRepeat: 'no-repeat'
@@ -32,9 +32,8 @@ export default function Home() {
             playsInline
             preload="metadata"
             className="hidden md:block w-full h-full object-cover object-center"
-            poster="/images/hero-bg.jpg"
           >
-            <source src="/images/hero3.mp4" type="video/mp4" />
+            <source src="/images/hero-pc2.mp4" type="video/mp4" />
           </video>
         </div>
 
@@ -54,14 +53,21 @@ export default function Home() {
               </p>
             </FadeIn>
             <FadeIn delay={200} duration={1000}>
-              <h1
-                className="text-4xl md:text-6xl lg:text-7xl font-medium mb-6 tracking-wider"
-                style={{ fontFamily: "var(--font-serif)", color: "#B8860B" }}
-              >
-                味処
-                <br />
-                <span className="text-5xl md:text-7xl lg:text-8xl">きく蔵</span>
-              </h1>
+              <div className="flex flex-col items-center">
+                {/* 印鑑ロゴ - 大きく表示 */}
+                <div className="mb-6 md:mb-8">
+                  <Image
+                    src="/images/kikuzo-seal.png"
+                    alt="味処 きく蔵"
+                    width={300}
+                    height={300}
+                    className="w-[200px] h-[200px] md:w-[280px] md:h-[280px] lg:w-[320px] lg:h-[320px] object-contain"
+                    priority
+                  />
+                </div>
+                {/* SEO用の非表示h1 */}
+                <h1 className="sr-only">味処 きく蔵</h1>
+              </div>
             </FadeIn>
             <FadeIn delay={300} duration={800}>
               <p
@@ -140,7 +146,9 @@ export default function Home() {
             <FadeIn>
               <div className="section-title">
                 <h2 style={{ fontFamily: "var(--font-serif)" }}>
-                  旬の恵みを、心を込めて
+                  落ち着いた和の空間で、
+                  <br className="md:hidden" />
+                  旬の味覚をお楽しみください。
                 </h2>
               </div>
             </FadeIn>
@@ -149,12 +157,22 @@ export default function Home() {
                 className="text-lg leading-relaxed text-[#333333] mb-8"
                 style={{ fontFamily: "var(--font-sans)" }}
               >
-                四季折々の食材を提供しております。
+                きく蔵は1970年に創業した、松本城のほど近くにある日本料理店です。
                 <br />
                 <br />
-                春は山菜、夏は鱧、秋は天然きのこ、冬は河豚やクエ。
+                天然の魚介と地場産の山菜・きのこを使い、
+                <br className="hidden md:inline" />
+                職人が一品一品、丁寧にお作りしております。
                 <br />
-                一年を通して、その時期にしか味わえない旬の味覚をお届けします。
+                <br />
+                また、料理だけでなく、カウンター・個室・座敷と
+                <br className="hidden md:inline" />
+                お客様のシーンに合わせた空間をご用意しております。
+                <br />
+                <br />
+                お一人様でも、ご家族でも、大切なお客様とのご会食でも。
+                <br className="hidden md:inline" />
+                皆様のご来店を心よりお待ちしております。
               </p>
             </FadeIn>
             <FadeIn delay={200}>

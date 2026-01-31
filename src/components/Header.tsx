@@ -39,8 +39,8 @@ export default function Header() {
         <>
             <header
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? "bg-white/95 backdrop-blur-sm shadow-md py-2"
-                    : "bg-white/90 backdrop-blur-sm shadow-sm py-3"
+                    ? "bg-black/80 backdrop-blur-md shadow-md py-2"
+                    : "bg-black/50 backdrop-blur-sm shadow-sm py-3"
                     }`}
             >
                 <div className="container mx-auto px-4 lg:px-6">
@@ -51,7 +51,7 @@ export default function Header() {
                             className="flex items-center shrink-0"
                         >
                             <img
-                                src="/images/rogo1.png"
+                                src="/images/header-logo-new.png"
                                 alt="きく蔵"
                                 className="w-auto object-contain"
                                 style={{ height: '48px', maxHeight: '48px' }}
@@ -64,11 +64,11 @@ export default function Header() {
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className={`text-sm tracking-wide transition-colors whitespace-nowrap hover:text-[#8B2500] ${pathname === item.href
-                                        ? "text-[#8B2500] font-medium"
-                                        : "text-[#333333]"
-                                        }`}
-                                    style={{ fontFamily: "var(--font-sans)" }}
+                                    className={`text-sm tracking-wide transition-colors whitespace-nowrap ${pathname === item.href ? "font-medium" : ""}`}
+                                    style={{
+                                        fontFamily: "var(--font-sans)",
+                                        color: "#FFFFFF"
+                                    }}
                                 >
                                     {item.name}
                                 </Link>
@@ -89,7 +89,7 @@ export default function Header() {
                                 <img
                                     src="/images/インスタロゴ-removebg-preview.png"
                                     alt="Instagram"
-                                    className="w-6 h-6 object-contain"
+                                    className="w-6 h-6 object-contain brightness-0 invert"
                                 />
                             </a>
                         </div>
@@ -97,7 +97,7 @@ export default function Header() {
                         {/* モバイルメニューボタン */}
                         <button
                             type="button"
-                            className="md:hidden p-2 text-[#333333]"
+                            className="md:hidden p-2 text-white"
                             onClick={toggleMenu}
                             aria-expanded={isMenuOpen}
                             aria-label={isMenuOpen ? "メニューを閉じる" : "メニューを開く"}
@@ -138,18 +138,18 @@ export default function Header() {
                         onClick={closeMenu}
                     />
                     {/* メニュー本体 */}
-                    <div className="absolute inset-x-0 top-[60px] bottom-0 bg-white overflow-y-auto">
+                    <div className="absolute inset-x-0 top-[60px] bottom-0 bg-black/95 overflow-y-auto">
                         <nav className="flex flex-col items-center py-12 gap-8">
                             {navigation.map((item) => (
                                 <Link
                                     key={item.href}
                                     href={item.href}
                                     onClick={closeMenu}
-                                    className={`text-lg tracking-wide ${pathname === item.href
-                                        ? "text-[#8B2500] font-medium"
-                                        : "text-[#333333]"
-                                        }`}
-                                    style={{ fontFamily: "var(--font-serif)" }}
+                                    className={`text-lg tracking-wide ${pathname === item.href ? "font-medium" : ""}`}
+                                    style={{
+                                        fontFamily: "var(--font-serif)",
+                                        color: "#FFFFFF"
+                                    }}
                                 >
                                     {item.name}
                                 </Link>
@@ -165,12 +165,12 @@ export default function Header() {
                                 href="https://www.instagram.com/kikuzou.taku/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-[#333333] mt-4"
+                                className="flex items-center gap-2 text-white mt-4"
                             >
                                 <img
                                     src="/images/インスタロゴ-removebg-preview.png"
                                     alt="Instagram"
-                                    className="w-6 h-6 object-contain"
+                                    className="w-6 h-6 object-contain brightness-0 invert"
                                 />
                                 <span>Instagram</span>
                             </a>

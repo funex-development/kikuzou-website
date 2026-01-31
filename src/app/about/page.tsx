@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import { FadeIn, StaggerContainer } from "@/components/ScrollAnimations";
 
@@ -72,6 +73,15 @@ const features = [
 // I should use multi_replace_file_content.
 
 export default function AboutPage() {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    const handleVideoEnd = () => {
+        if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.pause();
+        }
+    };
+
     return (
         <>
             {/* ページヘッダー */}
@@ -137,14 +147,14 @@ export default function AboutPage() {
                                 </div>
                             </FadeIn>
 
-                            {/* 店舗外観画像 */}
+                            {/* 職人の技 */}
                             <FadeIn direction="right" delay={200}>
                                 <div className="relative rounded overflow-hidden shadow-lg bg-[#1a1a1a]">
                                     <Image
-                                        src="/images/kikuzou-entrance.jpg"
-                                        alt="きく蔵 店舗外観"
+                                        src="/images/chef-cutting.jpg"
+                                        alt="職人の技"
                                         width={800}
-                                        height={600}
+                                        height={1000}
                                         className="w-full h-auto"
                                     />
                                 </div>
@@ -204,13 +214,13 @@ export default function AboutPage() {
                         </div>
                     </FadeIn>
 
-                    <div className="max-w-5xl mx-auto">
-                        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8" staggerDelay={150}>
+                    <div className="max-w-6xl mx-auto">
+                        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" staggerDelay={150}>
                             {/* カウンター席 */}
                             <div className="stagger-item">
-                                <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md group hover-zoom mb-4">
+                                <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md mb-4">
                                     <Image
-                                        src="/images/interior-counter-white.png"
+                                        src="/images/counter-new.jpg"
                                         alt="カウンター席"
                                         fill
                                         className="object-cover"
@@ -219,13 +229,30 @@ export default function AboutPage() {
                                 <h3 className="text-lg font-medium mb-2 text-[#8B2500]" style={{ fontFamily: "var(--font-serif)" }}>カウンター席</h3>
                                 <p className="text-sm text-[#333333] leading-relaxed">
                                     居心地のよいカウンター席。<br />
-                                    お一人様でも気兼ねなく、ゆったりとお寛ぎいただけます。職人の技を間近で楽しめる特等席です。
+                                    お一人様でも気兼ねなく、ゆったりとお寛ぎいただけます。
+                                </p>
+                            </div>
+
+                            {/* 小上がり */}
+                            <div className="stagger-item">
+                                <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md mb-4">
+                                    <Image
+                                        src="/images/koagari.png"
+                                        alt="小上がり"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <h3 className="text-lg font-medium mb-2 text-[#8B2500]" style={{ fontFamily: "var(--font-serif)" }}>小上がり</h3>
+                                <p className="text-sm text-[#333333] leading-relaxed">
+                                    落ち着いた雰囲気の小上がり席。<br />
+                                    少人数でのお食事やご歓談に最適です。
                                 </p>
                             </div>
 
                             {/* 個室 */}
                             <div className="stagger-item">
-                                <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md group hover-zoom mb-4">
+                                <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md mb-4">
                                     <Image
                                         src="/images/interior-private-white.png"
                                         alt="個室"
@@ -235,14 +262,14 @@ export default function AboutPage() {
                                 </div>
                                 <h3 className="text-lg font-medium mb-2 text-[#8B2500]" style={{ fontFamily: "var(--font-serif)" }}>個室</h3>
                                 <p className="text-sm text-[#333333] leading-relaxed">
-                                    3～6名様収容可能な個室を3室ご用意しております。<br />
-                                    接待やご会食、ご家族での団欒など、プライベートな時間を大切にしたい場面に最適です。
+                                    3～6名様収容可能な個室を3室ご用意。<br />
+                                    接待やご会食に最適です。
                                 </p>
                             </div>
 
                             {/* 座敷 */}
                             <div className="stagger-item">
-                                <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md group hover-zoom mb-4">
+                                <div className="aspect-[4/3] relative rounded overflow-hidden shadow-md mb-4">
                                     <Image
                                         src="/images/interior-zashiki-white.png"
                                         alt="座敷"
@@ -252,8 +279,8 @@ export default function AboutPage() {
                                 </div>
                                 <h3 className="text-lg font-medium mb-2 text-[#8B2500]" style={{ fontFamily: "var(--font-serif)" }}>座敷</h3>
                                 <p className="text-sm text-[#333333] leading-relaxed">
-                                    最大12名様まで収容可能な広間をご用意しております。<br />
-                                    落ち着きのある和の空間は、各種ご宴会や法事、お祝いのお席など、大人数でのお集まりにおすすめです。
+                                    最大12名様まで収容可能な広間。<br />
+                                    ご宴会や法事、お祝いのお席に。
                                 </p>
                             </div>
                         </StaggerContainer>
