@@ -150,12 +150,13 @@ export default function AboutPage() {
                             {/* 職人の技 */}
                             <FadeIn direction="right" delay={200}>
                                 <div className="relative rounded overflow-hidden shadow-lg bg-[#1a1a1a]">
-                                    <Image
-                                        src="/images/chef-cutting.jpg"
-                                        alt="職人の技"
-                                        width={800}
-                                        height={1000}
+                                    <video
+                                        src="/images/HP-002.mp4"
                                         className="w-full h-auto"
+                                        autoPlay
+                                        muted
+                                        playsInline
+                                        loop
                                     />
                                 </div>
                             </FadeIn>
@@ -317,6 +318,19 @@ export default function AboutPage() {
                     <FadeIn>
                         <div className="section-title">
                             <h2 style={{ fontFamily: "var(--font-serif)" }}>受賞歴</h2>
+                        </div>
+                    </FadeIn>
+
+                    {/* 百名店トロフィー画像 */}
+                    <FadeIn delay={200}>
+                        <div className="max-w-3xl mx-auto mb-12 rounded overflow-hidden shadow-lg">
+                            <Image
+                                src="/images/hyakumeiten-awards.jpg"
+                                alt="食べログ 日本料理 百名店 受賞トロフィー"
+                                width={800}
+                                height={500}
+                                className="w-full h-auto"
+                            />
                         </div>
                     </FadeIn>
 

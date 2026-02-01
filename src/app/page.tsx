@@ -55,9 +55,9 @@ export default function Home() {
             <FadeIn delay={200} duration={1000}>
               <div className="flex flex-col items-center">
                 {/* 印鑑ロゴ - 大きく表示 */}
-                <div className="mb-6 md:mb-8">
+                <div className="mb-6 md:mb-8 translate-x-4 md:translate-x-6">
                   <Image
-                    src="/images/kikuzo-seal.png"
+                    src="/images/rogo_4.png"
                     alt="味処 きく蔵"
                     width={300}
                     height={300}
