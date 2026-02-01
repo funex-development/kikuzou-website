@@ -46,7 +46,7 @@ export default function Home() {
           <div className="mt-16 md:mt-0">
             <FadeIn delay={300} duration={800}>
               <p
-                className="text-sm md:text-base tracking-[0.3em] mb-4 text-[#B8860B]"
+                className="text-sm md:text-base tracking-[0.3em] mb-4 text-white"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 創業1970年 ― 食べログ百名店
@@ -57,7 +57,7 @@ export default function Home() {
                 {/* 印鑑ロゴ - 大きく表示 */}
                 <div className="mb-6 md:mb-8 translate-x-4 md:translate-x-6">
                   <Image
-                    src="/images/rogo_4.png"
+                    src="/images/rogo_3.png"
                     alt="味処 きく蔵"
                     width={300}
                     height={300}
@@ -142,52 +142,89 @@ export default function Home() {
       {/* コンセプトセクション */}
       <section className="section bg-[#F5F2EB]">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <FadeIn>
-              <div className="section-title">
-                <h2 style={{ fontFamily: "var(--font-serif)" }}>
-                  落ち着いた和の空間で、
-                  <br className="md:hidden" />
-                  旬の味覚をお楽しみください。
-                </h2>
-              </div>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <p
-                className="text-lg leading-relaxed text-[#333333] mb-8"
-                style={{ fontFamily: "var(--font-sans)" }}
-              >
-                きく蔵は1970年に創業した、松本城のほど近くにある日本料理店です。
-                <br />
-                <br />
-                天然の魚介と地場産の山菜・きのこを使い、
-                <br className="hidden md:inline" />
-                職人が一品一品、丁寧にお作りしております。
-                <br />
-                <br />
-                また、料理だけでなく、カウンター・個室・座敷と
-                <br className="hidden md:inline" />
-                お客様のシーンに合わせた空間をご用意しております。
-                <br />
-                <br />
-                お一人様でも、ご家族でも、大切なお客様とのご会食でも。
-                <br className="hidden md:inline" />
-                皆様のご来店を心よりお待ちしております。
-              </p>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <div className="flex flex-wrap justify-center gap-4 mt-8">
-                <span className="px-4 py-2 bg-white rounded text-sm text-[#333333] shadow-sm">
-                  百名店 2021・2023・2025
-                </span>
-                <span className="px-4 py-2 bg-white rounded text-sm text-[#333333] shadow-sm">
-                  個室完備
-                </span>
-                <span className="px-4 py-2 bg-white rounded text-sm text-[#333333] shadow-sm">
-                  接待・記念日に
-                </span>
-              </div>
-            </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center max-w-7xl mx-auto">
+            {/* 左側：テキストコンテンツ */}
+            <div className="text-left order-2 md:order-1 relative z-10">
+              <FadeIn>
+                <div className="section-title !text-left mb-10">
+                  <h2
+                    style={{ fontFamily: "var(--font-serif)" }}
+                    className="text-3xl md:text-4xl lg:text-5xl leading-tight tracking-wide text-gray-900"
+                  >
+                    落ち着いた和の空間で、
+                    <br />
+                    <span className="inline-block mt-2">
+                      旬の味覚
+                    </span>
+                    をお楽しみください。
+                  </h2>
+                </div>
+              </FadeIn>
+              <FadeIn delay={200}>
+                <div className="space-y-6 text-base md:text-lg leading-loose text-gray-700 font-medium">
+                  <p style={{ fontFamily: "var(--font-sans)" }}>
+                    きく蔵は1970年に創業した、
+                    <br className="lg:hidden" />
+                    松本城のほど近くにある日本料理店です。
+                  </p>
+                  <p style={{ fontFamily: "var(--font-sans)" }}>
+                    天然の魚介と地場産の山菜・きのこを使い、
+                    <br className="hidden lg:inline" />
+                    職人が一品一品、丁寧にお作りしております。
+                  </p>
+                  <p style={{ fontFamily: "var(--font-sans)" }}>
+                    また、料理だけでなく、
+                    <br className="lg:hidden" />
+                    カウンター・個室・座敷と
+                    <br className="hidden lg:inline" />
+                    お客様のシーンに合わせた空間をご用意しております。
+                  </p>
+                  <p style={{ fontFamily: "var(--font-sans)" }}>
+                    お一人様でも、ご家族でも、
+                    <br className="lg:hidden" />
+                    大切なお客様とのご会食でも。
+                    <br />
+                    皆様のご来店を心よりお待ちしております。
+                  </p>
+                </div>
+              </FadeIn>
+              <FadeIn delay={300}>
+                <div className="flex flex-wrap gap-4 mt-10">
+                  <div className="px-5 py-2 border border-gray-300 rounded-full text-sm tracking-wider text-gray-600 bg-white/80 backdrop-blur-sm shadow-sm hover:border-[#B8860B] hover:text-[#B8860B] transition-colors duration-300">
+                    百名店 2021・2023・2025
+                  </div>
+                  <div className="px-5 py-2 border border-gray-300 rounded-full text-sm tracking-wider text-gray-600 bg-white/80 backdrop-blur-sm shadow-sm hover:border-[#B8860B] hover:text-[#B8860B] transition-colors duration-300">
+                    個室完備
+                  </div>
+                  <div className="px-5 py-2 border border-gray-300 rounded-full text-sm tracking-wider text-gray-600 bg-white/80 backdrop-blur-sm shadow-sm hover:border-[#B8860B] hover:text-[#B8860B] transition-colors duration-300">
+                    接待・記念日に
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
+
+            {/* 右側：動画 */}
+            <div className="order-1 md:order-2 relative">
+              <FadeIn delay={100}>
+                <div className="relative rounded-xl overflow-hidden shadow-2xl w-full aspect-[4/5] md:aspect-auto">
+                  {/* 背景装飾 */}
+                  <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#B8860B]/10 rounded-full -z-10 blur-xl"></div>
+                  <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#B8860B]/20 rounded-full -z-10 blur-2xl"></div>
+
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    <source src="/images/douga_02.mp4" type="video/mp4" />
+                  </video>
+                  {/* オーバーレイグラデーション（少し高級感を出すため） */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+                </div>
+              </FadeIn>
+            </div>
           </div>
         </div>
       </section>

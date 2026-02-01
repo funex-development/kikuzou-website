@@ -149,14 +149,12 @@ export default function AboutPage() {
 
                             {/* 職人の技 */}
                             <FadeIn direction="right" delay={200}>
-                                <div className="relative rounded overflow-hidden shadow-lg bg-[#1a1a1a]">
-                                    <video
-                                        src="/images/HP-002.mp4"
-                                        className="w-full h-auto"
-                                        autoPlay
-                                        muted
-                                        playsInline
-                                        loop
+                                <div className="relative rounded overflow-hidden shadow-lg aspect-[3/4] lg:aspect-[3/4] w-full max-w-md mx-auto lg:mr-0">
+                                    <Image
+                                        src="/images/chef_cooking_new.jpg"
+                                        alt="職人の調理風景"
+                                        fill
+                                        className="object-cover"
                                     />
                                 </div>
                             </FadeIn>
