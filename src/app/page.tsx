@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import CardStack from "@/components/CardStack";
 import StructuredData from "@/components/StructuredData";
 import { FadeIn, StaggerContainer } from "@/components/ScrollAnimations";
 
@@ -12,33 +13,32 @@ export default function Home() {
 
       {/* ヒーローセクション */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* 背景：モバイルは画像、PCは動画 */}
+        {/* 背景：モバイル・PC共に画像 */}
         <div className="absolute inset-0 bg-[#333333]">
           {/* モバイル用背景画像 */}
           <div
             className="absolute inset-0 md:hidden"
             style={{
-              backgroundImage: 'url(/images/hero-phone2.png)',
+              backgroundImage: 'url(/images/hero_mobile.jpg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               backgroundRepeat: 'no-repeat'
             }}
           />
-          {/* PC用動画 */}
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            className="hidden md:block w-full h-full object-cover object-center"
-          >
-            <source src="/images/hero-pc2.mp4" type="video/mp4" />
-          </video>
+          {/* PC用背景画像 */}
+          <div
+            className="hidden md:block absolute inset-0"
+            style={{
+              backgroundImage: 'url(/images/hero_desktop.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          />
         </div>
 
-        {/* オーバーレイ（テキスト読みやすさのため） */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+        {/* オーバーレイ（テキスト読みやすさのため） - 明るめに調整 */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/50"></div>
 
         {/* コンテンツ */}
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-screen">
@@ -142,11 +142,11 @@ export default function Home() {
       {/* コンセプトセクション */}
       <section className="section bg-[#F5F2EB]">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center max-w-7xl mx-auto">
-            {/* 左側：テキストコンテンツ */}
-            <div className="text-left order-2 md:order-1 relative z-10">
+          <div className="flex flex-col gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+            {/* 上部：テキストコンテンツ */}
+            <div className="text-center relative z-10 max-w-4xl mx-auto">
               <FadeIn>
-                <div className="section-title !text-left mb-10">
+                <div className="section-title mb-10">
                   <h2
                     style={{ fontFamily: "var(--font-serif)" }}
                     className="text-3xl md:text-4xl lg:text-5xl leading-tight tracking-wide text-gray-900"
@@ -162,24 +162,24 @@ export default function Home() {
               </FadeIn>
               <FadeIn delay={200}>
                 <div className="space-y-6 text-base md:text-lg leading-loose text-gray-700 font-medium">
-                  <p style={{ fontFamily: "var(--font-sans)" }}>
+                  <p style={{ fontFamily: "var(--font-serif)" }}>
                     きく蔵は1970年に創業した、
                     <br className="lg:hidden" />
                     松本城のほど近くにある日本料理店です。
                   </p>
-                  <p style={{ fontFamily: "var(--font-sans)" }}>
+                  <p style={{ fontFamily: "var(--font-serif)" }}>
                     天然の魚介と地場産の山菜・きのこを使い、
                     <br className="hidden lg:inline" />
                     職人が一品一品、丁寧にお作りしております。
                   </p>
-                  <p style={{ fontFamily: "var(--font-sans)" }}>
+                  <p style={{ fontFamily: "var(--font-serif)" }}>
                     また、料理だけでなく、
                     <br className="lg:hidden" />
                     カウンター・個室・座敷と
                     <br className="hidden lg:inline" />
                     お客様のシーンに合わせた空間をご用意しております。
                   </p>
-                  <p style={{ fontFamily: "var(--font-sans)" }}>
+                  <p style={{ fontFamily: "var(--font-serif)" }}>
                     お一人様でも、ご家族でも、
                     <br className="lg:hidden" />
                     大切なお客様とのご会食でも。
@@ -189,7 +189,7 @@ export default function Home() {
                 </div>
               </FadeIn>
               <FadeIn delay={300}>
-                <div className="flex flex-wrap gap-4 mt-10">
+                <div className="flex flex-wrap justify-center gap-4 mt-10">
                   <div className="px-5 py-2 border border-gray-300 rounded-full text-sm tracking-wider text-gray-600 bg-white/80 backdrop-blur-sm shadow-sm hover:border-[#B8860B] hover:text-[#B8860B] transition-colors duration-300">
                     百名店 2021・2023・2025
                   </div>
@@ -203,26 +203,10 @@ export default function Home() {
               </FadeIn>
             </div>
 
-            {/* 右側：動画 */}
-            <div className="order-1 md:order-2 relative">
-              <FadeIn delay={100}>
-                <div className="relative rounded-xl overflow-hidden shadow-2xl w-full aspect-[4/5] md:aspect-auto">
-                  {/* 背景装飾 */}
-                  <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#B8860B]/10 rounded-full -z-10 blur-xl"></div>
-                  <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#B8860B]/20 rounded-full -z-10 blur-2xl"></div>
-
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover"
-                  >
-                    <source src="/images/douga_02.mp4" type="video/mp4" />
-                  </video>
-                  {/* オーバーレイグラデーション（少し高級感を出すため） */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
-                </div>
+            {/* 下部：季節の食材ギャラリー（カードスタック） - 大きく表示 */}
+            <div className="w-full flex justify-center py-6">
+              <FadeIn delay={100} className="w-full flex justify-center">
+                <CardStack />
               </FadeIn>
             </div>
           </div>
