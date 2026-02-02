@@ -272,7 +272,7 @@ export default function Home() {
             <div className="card group stagger-item">
               <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
                 <Image
-                  src="/images/kue_nabe_enhanced.png"
+                  src="/images/kue_new.jpg"
                   alt="幻の高級魚 クエ鍋"
                   fill
                   className="object-cover"
@@ -296,7 +296,7 @@ export default function Home() {
             <div className="card group stagger-item">
               <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
                 <Image
-                  src="/images/fugu-retouched.png"
+                  src="/images/fugu_new.jpg"
                   alt="冬の贅沢 河豚コース"
                   fill
                   className="object-cover"
