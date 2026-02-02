@@ -25,12 +25,21 @@ export default function Home() {
               backgroundRepeat: 'no-repeat'
             }}
           />
-          {/* PC用背景画像 */}
+          {/* PC用背景基盤（パターン） */}
+          <div
+            className="hidden md:block absolute inset-0 opacity-100"
+            style={{
+              backgroundImage: 'url(/images/page-pattern.png)',
+              backgroundRepeat: 'repeat',
+              backgroundSize: '300px'
+            }}
+          />
+          {/* PC用中央写真 */}
           <div
             className="hidden md:block absolute inset-0"
             style={{
-              backgroundImage: 'url(/images/hero_desktop.jpg)',
-              backgroundSize: 'cover',
+              backgroundImage: 'url(/images/hero-bg.jpg)',
+              backgroundSize: 'contain',
               backgroundPosition: 'center center',
               backgroundRepeat: 'no-repeat'
             }}
@@ -208,7 +217,7 @@ export default function Home() {
               <FadeIn delay={100} className="w-full flex justify-center">
                 <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
                   <video
-                    src="/images/douga_03.mp4"
+                    src="/images/douga-04.mp4"
                     className="w-full h-auto"
                     autoPlay
                     muted
