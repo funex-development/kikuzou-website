@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import CardStack from "@/components/CardStack";
+
 import StructuredData from "@/components/StructuredData";
 import { FadeIn, StaggerContainer } from "@/components/ScrollAnimations";
 
@@ -41,9 +41,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/50"></div>
 
         {/* コンテンツ */}
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-screen">
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-screen pb-32">
           {/* テキストコンテンツ */}
-          <div className="mt-16 md:mt-0">
+          <div className="md:mt-0">
             <FadeIn delay={300} duration={800}>
               <p
                 className="text-sm md:text-base tracking-[0.3em] mb-4 text-white"
@@ -101,7 +101,7 @@ export default function Home() {
         </div>
 
         {/* モバイル用ボタン - セクションに対して下部に配置 */}
-        <div className="md:hidden absolute bottom-24 left-0 right-0 z-20 px-4">
+        <div className="md:hidden absolute bottom-36 left-0 right-0 z-20 px-4">
           <FadeIn delay={400} duration={800}>
             <div className="flex flex-col gap-4 justify-center items-center max-w-sm mx-auto">
               <Link
@@ -206,7 +206,16 @@ export default function Home() {
             {/* 下部：季節の食材ギャラリー（カードスタック） - 大きく表示 */}
             <div className="w-full flex justify-center py-6">
               <FadeIn delay={100} className="w-full flex justify-center">
-                <CardStack />
+                <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
+                  <video
+                    src="/images/douga_03.mp4"
+                    className="w-full h-auto"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                </div>
               </FadeIn>
             </div>
           </div>

@@ -130,19 +130,14 @@ export default function AboutPage() {
                                     </h2>
                                     <div className="space-y-6 text-[#333333]">
                                         <p style={{ fontFamily: "var(--font-serif)" }}>
-                                            日本料理と聞くと少し身構えてしまうかもしれませんが、本来はもっと身近で、心から楽しむもの。<br />
-                                            私はそう考えています。
+                                            日本料理と聞くと少し身構えてしまうかもしれませんが、本来はもっと身近で、心から楽しむものだと私は考えています。<br />
+                                            四季折々のお料理で季節を感じてください。
                                         </p>
                                         <p style={{ fontFamily: "var(--font-serif)" }}>
-                                            地元の山海の幸を、一番美味しい食べ方で。<br />
-                                            合わせるお酒も、顔の見える蔵元から届くこだわりのものばかりです。
-                                        </p>
-                                        <p style={{ fontFamily: "var(--font-serif)" }}>
-                                            お一人でゆっくり、または大切な方と賑やかに、美味しい料理を囲んで。<br />
-                                            今日という日が、少しだけ特別な日になりますように。
+                                            お一人でゆっくり、または大切な方と賑やかに。今日という日が、少しだけ特別な日となりますように。
                                         </p>
                                         <p className="text-right text-lg mt-4" style={{ fontFamily: "var(--font-serif)" }}>
-                                            亭主　各務 卓
+                                            店主 各務 卓
                                         </p>
                                     </div>
                                 </div>
