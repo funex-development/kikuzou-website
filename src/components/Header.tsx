@@ -51,7 +51,7 @@ export default function Header() {
                             className="flex items-center shrink-0"
                         >
                             <img
-                                src="/images/header-logo-new.png"
+                                src="/images/header_logo_new.png"
                                 alt="きく蔵"
                                 className="w-auto object-contain"
                                 style={{ height: '48px', maxHeight: '48px' }}

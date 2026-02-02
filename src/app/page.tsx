@@ -57,11 +57,11 @@ export default function Home() {
                 {/* 印鑑ロゴ - 大きく表示 */}
                 <div className="mb-6 md:mb-8 translate-x-4 md:translate-x-6">
                   <Image
-                    src="/images/rogo_3.png"
+                    src="/images/hero_logo_new.png"
                     alt="味処 きく蔵"
                     width={300}
-                    height={300}
-                    className="w-[200px] h-[200px] md:w-[280px] md:h-[280px] lg:w-[320px] lg:h-[320px] object-contain"
+                    height={150}
+                    className="w-auto h-[55px] md:h-[65px] lg:h-[80px] object-contain"
                     priority
                   />
                 </div>
