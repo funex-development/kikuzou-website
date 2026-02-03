@@ -70,7 +70,7 @@ export default function Home() {
                     alt="味処 きく蔵"
                     width={300}
                     height={150}
-                    className="w-auto !h-[140px] md:!h-[160px] lg:!h-[180px] object-contain drop-shadow-xl"
+                    className="w-auto !h-[140px] md:!h-[160px] lg:!h-[180px] object-contain drop-shadow-[0_0_8px_rgba(0,0,0,0.9)]"
                     priority
                   />
                 </div>
