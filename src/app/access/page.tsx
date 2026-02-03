@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "アクセス・店舗情報",
@@ -31,6 +32,24 @@ export default function AccessPage() {
                     <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ color: "#B8860B" }}>
                         松本城から徒歩5分、東小路の隠れた名店
                     </p>
+                </div>
+            </section>
+
+            {/* 店舗外観画像 */}
+            <section className="bg-[#F5F2EB] py-8 pb-0">
+                <div className="container mx-auto px-4 lg:px-6">
+                    <div className="max-w-2xl mx-auto">
+                        <div className="w-full flex justify-center rounded-lg overflow-hidden shadow-lg">
+                            <Image
+                                src="/images/access-exterior.jpg"
+                                alt="きく蔵 店舗外観"
+                                width={768}
+                                height={1024}
+                                style={{ width: '100%', height: 'auto', maxWidth: '600px' }}
+                                priority
+                            />
+                        </div>
+                    </div>
                 </div>
             </section>
 

@@ -19,7 +19,7 @@ export default function Home() {
           <div
             className="absolute inset-0 md:hidden"
             style={{
-              backgroundImage: 'url(/images/hero-mobile-final.jpg)',
+              backgroundImage: 'url(/images/hero-mobile-new-2.jpg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               backgroundRepeat: 'no-repeat'
