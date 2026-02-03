@@ -39,8 +39,8 @@ export default function Header() {
         <>
             <header
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? "bg-black/80 backdrop-blur-md shadow-md py-2"
-                    : "bg-black/50 backdrop-blur-sm shadow-sm py-3"
+                    ? "bg-black/90 shadow-md py-2"
+                    : "bg-black/70 shadow-sm py-3"
                     }`}
             >
                 <div className="container mx-auto px-4 lg:px-6">

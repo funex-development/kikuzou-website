@@ -19,7 +19,7 @@ export default function Home() {
           <div
             className="absolute inset-0 md:hidden"
             style={{
-              backgroundImage: 'url(/images/hero_mobile.jpg)',
+              backgroundImage: 'url(/images/hero-mobile-final.jpg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               backgroundRepeat: 'no-repeat'
@@ -47,7 +47,7 @@ export default function Home() {
         </div>
 
         {/* オーバーレイ（テキスト読みやすさのため） - 明るめに調整 */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-transparent to-black/20"></div>
 
         {/* コンテンツ */}
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-screen pb-32">
@@ -70,7 +70,7 @@ export default function Home() {
                     alt="味処 きく蔵"
                     width={300}
                     height={150}
-                    className="w-auto h-[55px] md:h-[65px] lg:h-[80px] object-contain"
+                    className="w-auto !h-[140px] md:!h-[160px] lg:!h-[180px] object-contain"
                     priority
                   />
                 </div>
