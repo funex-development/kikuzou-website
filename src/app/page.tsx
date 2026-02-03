@@ -55,7 +55,7 @@ export default function Home() {
           <div className="md:mt-0">
             <FadeIn delay={300} duration={800}>
               <p
-                className="text-sm md:text-base tracking-[0.3em] mb-4 text-white"
+                className="text-sm md:text-base tracking-[0.3em] mb-4 text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 創業1970年 ― 食べログ百名店
@@ -70,7 +70,7 @@ export default function Home() {
                     alt="味処 きく蔵"
                     width={300}
                     height={150}
-                    className="w-auto !h-[140px] md:!h-[160px] lg:!h-[180px] object-contain"
+                    className="w-auto !h-[140px] md:!h-[160px] lg:!h-[180px] object-contain drop-shadow-xl"
                     priority
                   />
                 </div>
@@ -80,7 +80,7 @@ export default function Home() {
             </FadeIn>
             <FadeIn delay={300} duration={800}>
               <p
-                className="text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto opacity-90"
+                className="text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto opacity-90 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
                 style={{ fontFamily: "var(--font-sans)" }}
               >
                 四季を感じる日本料理
