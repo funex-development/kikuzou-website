@@ -149,20 +149,20 @@ export default function Home() {
       </section>
 
       {/* コンセプトセクション */}
-      <section className="section bg-[#F5F2EB]">
+      <section className="section py-20 md:py-32 bg-[#F5F2EB]">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="flex flex-col gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
             {/* 上部：テキストコンテンツ */}
             <div className="text-center relative z-10 max-w-4xl mx-auto">
               <FadeIn>
-                <div className="section-title mb-10">
+                <div className="section-title mb-16">
                   <h2
                     style={{ fontFamily: "var(--font-serif)" }}
                     className="text-3xl md:text-4xl lg:text-5xl leading-tight tracking-wide text-gray-900"
                   >
                     落ち着いた和の空間で、
                     <br />
-                    <span className="inline-block mt-2">
+                    <span className="inline-block mt-4">
                       旬の味覚
                     </span>
                     をお楽しみください。
@@ -170,24 +170,24 @@ export default function Home() {
                 </div>
               </FadeIn>
               <FadeIn delay={200}>
-                <div className="space-y-6 text-base md:text-lg leading-loose text-gray-700 font-medium">
+                <div className="space-y-10 text-lg md:text-xl leading-loose text-gray-700 font-medium tracking-wide">
                   <p style={{ fontFamily: "var(--font-serif)" }}>
                     きく蔵は1970年創業、
-                    <br />
+                    <br className="hidden md:inline" />
                     松本城のほど近くで暖簾を掲げてまいりました。
                   </p>
                   <p style={{ fontFamily: "var(--font-serif)" }}>
                     旬の魚介や地場産の山菜・きのこ等を用い、
-                    <br className="hidden lg:inline" />
+                    <br className="hidden md:inline" />
                     受け継いできた日本料理の技を大切に、
-                    <br className="lg:hidden" />
+                    <br className="hidden md:inline" />
                     一品一品、心を込めて。
                   </p>
                   <p style={{ fontFamily: "var(--font-serif)" }}>
                     店内には、カウンター・個室・座敷を設え、
-                    <br className="hidden lg:inline" />
+                    <br className="hidden md:inline" />
                     お一人様からご会食・ご接待まで、
-                    <br />
+                    <br className="hidden md:inline" />
                     さまざまな場面に寄り添う空間をご用意しております。
                   </p>
                   <p style={{ fontFamily: "var(--font-serif)" }}>
@@ -230,7 +230,7 @@ export default function Home() {
       </section>
 
       {/* おすすめ料理ハイライト */}
-      <section className="section bg-white">
+      <section className="section py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4 lg:px-6">
           <FadeIn>
             <div className="section-title">
@@ -259,7 +259,7 @@ export default function Home() {
                 >
                   極上 馬刺し
                 </h3>
-                <p className="text-[#333333] text-sm mb-3">
+                <p className="text-[#333333] text-base leading-relaxed mb-3">
                   地場産の極上馬刺し。新鮮な赤身の旨みと
                   とろける脂の甘みをご堪能ください。
                 </p>
@@ -283,7 +283,7 @@ export default function Home() {
                 >
                   幻の高級魚 クエ鍋
                 </h3>
-                <p className="text-[#333333] text-sm mb-3">
+                <p className="text-[#333333] text-base leading-relaxed mb-3">
                   脂の乗った濃厚な旨味と、弾力のある白身はまさに絶品。
                   懐石コースにクエ鍋を合わせた、冬期限定の贅沢なコースです。
                 </p>
@@ -307,7 +307,7 @@ export default function Home() {
                 >
                   冬の贅沢 河豚コース
                 </h3>
-                <p className="text-[#333333] text-sm mb-3">
+                <p className="text-[#333333] text-base leading-relaxed mb-3">
                   九州直送の最高級トラフグ。てっさ、ふぐちり、
                   白子焼きなど冬の味覚をコースで。
                 </p>
@@ -329,7 +329,7 @@ export default function Home() {
       </section>
 
       {/* SNS・リンク */}
-      <section className="section-sm bg-[#F5F2EB]">
+      <section className="section py-20 md:py-32 bg-[#F5F2EB]">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto">
             <FadeIn>
@@ -410,7 +410,7 @@ export default function Home() {
       </section>
 
       {/* アクセス・予約導線 */}
-      <section className="section bg-[#333333] text-white">
+      <section className="section py-20 md:py-32 bg-[#333333] text-white">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* 地図エリア */}
