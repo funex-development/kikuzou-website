@@ -172,28 +172,26 @@ export default function Home() {
               <FadeIn delay={200}>
                 <div className="space-y-6 text-base md:text-lg leading-loose text-gray-700 font-medium">
                   <p style={{ fontFamily: "var(--font-serif)" }}>
-                    きく蔵は1970年に創業した、
-                    <br className="lg:hidden" />
-                    松本城のほど近くにある日本料理店です。
-                  </p>
-                  <p style={{ fontFamily: "var(--font-serif)" }}>
-                    天然の魚介と地場産の山菜・きのこを使い、
-                    <br className="hidden lg:inline" />
-                    職人が一品一品、丁寧にお作りしております。
-                  </p>
-                  <p style={{ fontFamily: "var(--font-serif)" }}>
-                    また、料理だけでなく、
-                    <br className="lg:hidden" />
-                    カウンター・個室・座敷と
-                    <br className="hidden lg:inline" />
-                    お客様のシーンに合わせた空間をご用意しております。
-                  </p>
-                  <p style={{ fontFamily: "var(--font-serif)" }}>
-                    お一人様でも、ご家族でも、
-                    <br className="lg:hidden" />
-                    大切なお客様とのご会食でも。
+                    きく蔵は1970年創業、
                     <br />
-                    皆様のご来店を心よりお待ちしております。
+                    松本城のほど近くで暖簾を掲げてまいりました。
+                  </p>
+                  <p style={{ fontFamily: "var(--font-serif)" }}>
+                    旬の魚介や地場産の山菜・きのこ等を用い、
+                    <br className="hidden lg:inline" />
+                    受け継いできた日本料理の技を大切に、
+                    <br className="lg:hidden" />
+                    一品一品、心を込めて。
+                  </p>
+                  <p style={{ fontFamily: "var(--font-serif)" }}>
+                    店内には、カウンター・個室・座敷を設え、
+                    <br className="hidden lg:inline" />
+                    お一人様からご会食・ご接待まで、
+                    <br />
+                    さまざまな場面に寄り添う空間をご用意しております。
+                  </p>
+                  <p style={{ fontFamily: "var(--font-serif)" }}>
+                    皆様のお越しを、心よりお待ちしております。
                   </p>
                 </div>
               </FadeIn>
