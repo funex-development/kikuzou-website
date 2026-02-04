@@ -88,6 +88,8 @@ h6 {
   font-weight: 500;
   line-height: 1.4;
   color: var(--color-sumi);
+  text-wrap: balance; /* 行のバランスを自動調整 */
+  overflow-wrap: break-word;
 }
 
 h1 {
@@ -100,6 +102,11 @@ h2 {
 
 h3 {
   font-size: clamp(1.25rem, 3vw, 1.5rem);
+}
+
+p {
+  text-wrap: pretty; /* 孤立行を防ぐように改行を最適化 */
+  overflow-wrap: break-word;
 }
 
 /* リンク */
