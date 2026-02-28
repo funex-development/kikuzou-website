@@ -216,7 +216,7 @@ const drinkMenu = [
 ];
 
 export default function MenuPage() {
-    const [activeTab, setActiveTab] = useState<"course" | "alacarte" | "drink">("course");
+    const [activeTab, setActiveTab] = useState<"course" | "alacarte" | "drink">("alacarte");
     const [openCategories, setOpenCategories] = useState<string[]>(["きく蔵の人気メニュー"]);
 
     const toggleCategory = (category: string) => {
@@ -262,16 +262,6 @@ export default function MenuPage() {
                 <div className="container mx-auto px-4 lg:px-6">
                     <div className="flex justify-center md:gap-16 gap-4 overflow-x-auto">
                         <button
-                            onClick={() => setActiveTab("course")}
-                            className={`py-4 px-2 md:px-6 border-b-2 text-base md:text-lg font-medium transition-all duration-300 whitespace-nowrap ${activeTab === "course"
-                                ? "border-[#B8860B] text-[#B8860B]"
-                                : "border-transparent text-gray-500 hover:text-gray-800"
-                                }`}
-                            style={{ fontFamily: "var(--font-serif)" }}
-                        >
-                            コース料理
-                        </button>
-                        <button
                             onClick={() => setActiveTab("alacarte")}
                             className={`py-4 px-2 md:px-6 border-b-2 text-base md:text-lg font-medium transition-all duration-300 whitespace-nowrap ${activeTab === "alacarte"
                                 ? "border-[#B8860B] text-[#B8860B]"
@@ -280,6 +270,16 @@ export default function MenuPage() {
                             style={{ fontFamily: "var(--font-serif)" }}
                         >
                             アラカルト（一品料理）
+                        </button>
+                        <button
+                            onClick={() => setActiveTab("course")}
+                            className={`py-4 px-2 md:px-6 border-b-2 text-base md:text-lg font-medium transition-all duration-300 whitespace-nowrap ${activeTab === "course"
+                                ? "border-[#B8860B] text-[#B8860B]"
+                                : "border-transparent text-gray-500 hover:text-gray-800"
+                                }`}
+                            style={{ fontFamily: "var(--font-serif)" }}
+                        >
+                            コース料理
                         </button>
                         <button
                             onClick={() => setActiveTab("drink")}
@@ -390,6 +390,11 @@ export default function MenuPage() {
                                         一品料理
                                     </h2>
                                     <p>旬の素材を活かした逸品をご用意しております</p>
+                                    <p className="text-sm text-[#333333] mt-4">
+                                        季節料理ならびに本日のおすすめは、店内メニューにてご案内しております
+                                        <br />
+                                        ぜひご覧ください
+                                    </p>
                                     <p className="text-sm text-[#333333] mt-4">※ 表示価格は税込です</p>
                                 </div>
 

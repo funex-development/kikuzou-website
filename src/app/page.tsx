@@ -1,10 +1,28 @@
-"use client";
 
 import Link from "next/link";
 import Image from "next/image";
 
 import StructuredData from "@/components/StructuredData";
 import { FadeIn, StaggerContainer } from "@/components/ScrollAnimations";
+
+// スクロールインジケーターSVG（静的JSXのためコンポーネント外に定義 - rendering-hoist-jsx）
+const ScrollIndicator = (
+  <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg
+      className="w-6 h-6 text-white opacity-70"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+      />
+    </svg>
+  </div>
+);
 
 export default function Home() {
   return (
@@ -131,21 +149,8 @@ export default function Home() {
         </div>
 
         {/* スクロールインジケーター */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg
-            className="w-6 h-6 text-white opacity-70"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </div>
+        {/* 静的JSXを外出し（rendering-hoist-jsx） */}
+        {ScrollIndicator}
       </section>
 
       {/* コンセプトセクション */}
@@ -352,9 +357,11 @@ export default function Home() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
                   <div className="w-14 h-14 flex items-center justify-center bg-gray-50 rounded-full group-hover:scale-110 transition-transform duration-300 shadow-inner">
-                    <img
+                    <Image
                       src="/images/インスタロゴ-removebg-preview.png"
                       alt="Instagram"
+                      width={32}
+                      height={32}
                       className="w-8 h-8 object-contain"
                     />
                   </div>

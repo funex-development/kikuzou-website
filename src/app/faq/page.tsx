@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import { FAQStructuredData } from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-    title: "よくあるご質問",
+    title: "よくあるご質問 | 松本の日本料理・和食 きく蔵",
     description:
-        "味処 きく蔵のよくあるご質問。予約、お子様連れ、個室、駐車場、お支払い方法、キャンセル料などについてお答えしております。",
+        "味処 きく蔵のよくあるご質問。松本の老舗日本料理・和食・郷土料理店への予約方法、お子様連れ、個室、駐車場、お支払い方法、キャンセル料について。食べログ百名店選出。馬刺し・河豚・松茸・山賊焼きなどの信州の味覚をご堪能ください。",
 };
 
 const faqs = [
