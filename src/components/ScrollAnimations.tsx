@@ -11,6 +11,24 @@ interface FadeInProps {
     threshold?: number;
 }
 
+// 方向に応じた初期位置のスタイル（コンポーネント外に定義 - rerender-derived-state-no-effect）
+function getInitialTransform(direction: FadeInProps["direction"]) {
+    switch (direction) {
+        case "up":
+            return "translateY(30px)";
+        case "down":
+            return "translateY(-30px)";
+        case "left":
+            return "translateX(30px)";
+        case "right":
+            return "translateX(-30px)";
+        case "none":
+            return "none";
+        default:
+            return "translateY(30px)";
+    }
+}
+
 /**
  * スクロールに合わせてフェードインするアニメーションコンポーネント
  * IntersectionObserverを使用し、要素が画面に入ったときにアニメーションを発火
@@ -50,31 +68,13 @@ export function FadeIn({
         return () => observer.disconnect();
     }, [delay, threshold]);
 
-    // 方向に応じた初期位置のスタイル
-    const getInitialTransform = () => {
-        switch (direction) {
-            case "up":
-                return "translateY(30px)";
-            case "down":
-                return "translateY(-30px)";
-            case "left":
-                return "translateX(30px)";
-            case "right":
-                return "translateX(-30px)";
-            case "none":
-                return "none";
-            default:
-                return "translateY(30px)";
-        }
-    };
-
     return (
         <div
             ref={ref}
             className={`animate-fade-in ${className}`}
             style={{
                 opacity: 0,
-                transform: getInitialTransform(),
+                transform: getInitialTransform(direction),
                 transition: `opacity ${duration}ms cubic-bezier(0.4, 0, 0.2, 1), transform ${duration}ms cubic-bezier(0.4, 0, 0.2, 1)`,
             }}
         >

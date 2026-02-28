@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navigation = [
@@ -21,13 +22,17 @@ export default function Header() {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
-        window.addEventListener("scroll", handleScroll);
+        // スクロール性能向上のためpassiveオプションを指定（client-passive-event-listeners）
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-        document.body.style.overflow = !isMenuOpen ? "hidden" : "";
+        // 関数型setStateで安定した状態更新（rerender-functional-setstate）
+        setIsMenuOpen(prev => {
+            document.body.style.overflow = !prev ? "hidden" : "";
+            return !prev;
+        });
     };
 
     const closeMenu = () => {
@@ -50,9 +55,11 @@ export default function Header() {
                             href="/"
                             className="flex items-center shrink-0"
                         >
-                            <img
+                            <Image
                                 src="/images/header_logo_new.png"
                                 alt="きく蔵"
+                                width={120}
+                                height={48}
                                 className="w-auto object-contain"
                                 style={{ height: '48px', maxHeight: '48px' }}
                             />
@@ -86,9 +93,11 @@ export default function Header() {
                                 aria-label="Instagram"
                                 className="hover:opacity-80 transition-opacity shrink-0"
                             >
-                                <img
+                                <Image
                                     src="/images/インスタロゴ-removebg-preview.png"
                                     alt="Instagram"
+                                    width={24}
+                                    height={24}
                                     className="w-6 h-6 object-contain brightness-0 invert"
                                 />
                             </a>
@@ -130,7 +139,8 @@ export default function Header() {
             </header>
 
             {/* モバイルメニュー（headerの外に配置してz-indexを最大に） */}
-            {isMenuOpen && (
+            {/* 三項演算子を使用（rendering-conditional-render） */}
+            {isMenuOpen ? (
                 <div className="md:hidden fixed inset-0 z-[9999]">
                     {/* オーバーレイ */}
                     <div
@@ -167,9 +177,11 @@ export default function Header() {
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 text-white mt-4"
                             >
-                                <img
+                                <Image
                                     src="/images/インスタロゴ-removebg-preview.png"
                                     alt="Instagram"
+                                    width={24}
+                                    height={24}
                                     className="w-6 h-6 object-contain brightness-0 invert"
                                 />
                                 <span>Instagram</span>
@@ -177,7 +189,7 @@ export default function Header() {
                         </nav>
                     </div>
                 </div>
-            )}
+            ) : null}
         </>
     );
 }
