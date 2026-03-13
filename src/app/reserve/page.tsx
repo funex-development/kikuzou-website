@@ -199,7 +199,7 @@ export default function ReservePage() {
                                     </li>
                                     <li className="flex justify-between">
                                         <span>前日</span>
-                                        <span>コース料金の70%</span>
+                                        <span>コース料金の80%</span>
                                     </li>
                                     <li className="flex justify-between">
                                         <span>当日</span>
