@@ -47,6 +47,7 @@ export default function Footer() {
                         <div className="space-y-2 text-sm text-gray-300">
                             <p>17:30 ～ 22:00（L.O. 21:15）</p>
                             <p className="text-white">定休日：日曜日<br /><span className="text-xs">※月曜日が祝日の場合は、日曜営業・月曜休業となります。</span></p>
+                            <p className="text-xs text-gray-300 pt-2">※ 当店ではサービス料（5%）を頂戴しております</p>
                         </div>
                     </div>
 
