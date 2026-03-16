@@ -219,6 +219,9 @@ export default function ReservePage() {
                                 </ul>
                             </div>
                         </div>
+                        <p className="text-center text-sm text-gray-300 mt-6">
+                            ※ 当店ではサービス料（5%）を頂戴しております
+                        </p>
                     </div>
                 </div>
             </section>
