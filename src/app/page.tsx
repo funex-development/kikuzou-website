@@ -275,8 +275,8 @@ export default function Home() {
             <div className="card group stagger-item">
               <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
                 <Image
-                  src="/images/kue_new.jpg"
-                  alt="幻の高級魚 クエ鍋"
+                  src="/images/takenoko_manju.jpg"
+                  alt="きく蔵名物 筍饅頭"
                   fill
                   className="object-cover"
                 />
@@ -286,11 +286,11 @@ export default function Home() {
                   className="text-xl mb-2"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
-                  幻の高級魚 クエ鍋
+                  きく蔵名物 筍饅頭
                 </h3>
                 <p className="text-[#333333] text-base leading-relaxed mb-3">
-                  脂の乗った濃厚な旨味と、弾力のある白身はまさに絶品。
-                  懐石コースにクエ鍋を合わせた、冬期限定の贅沢なコースです。
+                  生地に筍をたっぷり使用し、中にそぼろのお肉を閉じ込め揚げた
+                  この時期１番人気の季節限定メニューです。
                 </p>
               </div>
             </div>
@@ -299,8 +299,8 @@ export default function Home() {
             <div className="card group stagger-item">
               <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
                 <Image
-                  src="/images/fugu_new.jpg"
-                  alt="冬の贅沢 河豚コース"
+                  src="/images/sansai_tempura.jpg"
+                  alt="山菜天ぷら"
                   fill
                   className="object-cover"
                 />
@@ -310,11 +310,11 @@ export default function Home() {
                   className="text-xl mb-2"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
-                  冬の贅沢 河豚コース
+                  山菜天ぷら
                 </h3>
                 <p className="text-[#333333] text-base leading-relaxed mb-3">
-                  九州直送の最高級トラフグ。てっさ、ふぐちり、
-                  白子焼きなど冬の味覚をコースで。
+                  タラの芽、フキノトウ、カンゾウ、コシアブラなど
+                  地場で採取した山菜の天ぷらです。日により珍しい山菜も入ります。
                 </p>
               </div>
             </div>
