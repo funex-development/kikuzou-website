@@ -275,8 +275,8 @@ export default function Home() {
             <div className="card group stagger-item">
               <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
                 <Image
-                  src="/images/takenoko_manju.jpg"
-                  alt="きく蔵名物 筍饅頭"
+                  src="/images/ayu-himono.webp"
+                  alt="自家製鮎の一夜干し"
                   fill
                   className="object-cover"
                 />
@@ -286,11 +286,12 @@ export default function Home() {
                   className="text-xl mb-2"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
-                  きく蔵名物 筍饅頭
+                  自家製鮎の一夜干し
                 </h3>
                 <p className="text-[#333333] text-base leading-relaxed mb-3">
-                  生地に筍をたっぷり使用し、中にそぼろのお肉を閉じ込め揚げた
-                  この時期１番人気の季節限定メニューです。
+                  旬の鮎を丁寧に下処理し、一晩かけて干し上げました。
+                  余分な水分を抜くことで鮎本来の旨味と香りが凝縮され、焼けば芳ばしい風味が味わえます。
+                  頭から骨まで丸ごと味わえる、季節ならではの一品です。
                 </p>
               </div>
             </div>
