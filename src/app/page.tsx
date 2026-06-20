@@ -300,8 +300,8 @@ export default function Home() {
             <div className="card group stagger-item">
               <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
                 <Image
-                  src="/images/sansai_tempura.jpg"
-                  alt="山菜天ぷら"
+                  src="/images/tougan-suishouni.webp"
+                  alt="冬瓜の水晶煮"
                   fill
                   className="object-cover"
                 />
@@ -311,11 +311,11 @@ export default function Home() {
                   className="text-xl mb-2"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
-                  山菜天ぷら
+                  冬瓜の水晶煮
                 </h3>
                 <p className="text-[#333333] text-base leading-relaxed mb-3">
-                  タラの芽、フキノトウ、カンゾウ、コシアブラなど
-                  地場で採取した山菜の天ぷらです。日により珍しい山菜も入ります。
+                  冬瓜をくり抜き器にし、中に冬瓜、アワビ、エビ、白キクラゲなどを煮込み入れました。
+                  夏の人気メニューになります。器には夏らしく花火の彫刻を施してあります。
                 </p>
               </div>
             </div>
