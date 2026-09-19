@@ -268,6 +268,9 @@ export default function Home() {
                   地場産の極上馬刺し。新鮮な赤身の旨みと
                   とろける脂の甘みをご堪能ください。
                 </p>
+                <p className="text-[#666666] text-sm">
+                  （部位はその日の仕入れによりかわります）
+                </p>
               </div>
             </div>
 
