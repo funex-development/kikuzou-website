@@ -275,8 +275,8 @@ export default function Home() {
             <div className="card group stagger-item">
               <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
                 <Image
-                  src="/images/ayu-himono.webp"
-                  alt="自家製鮎の一夜干し"
+                  src="/images/kinoko-nabe.webp"
+                  alt="きく蔵名物「きのこ鍋」"
                   fill
                   className="object-cover"
                 />
@@ -286,12 +286,11 @@ export default function Home() {
                   className="text-xl mb-2"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
-                  自家製鮎の一夜干し
+                  きく蔵名物「きのこ鍋」
                 </h3>
                 <p className="text-[#333333] text-base leading-relaxed mb-3">
-                  旬の鮎を丁寧に下処理し、一晩かけて干し上げました。
-                  余分な水分を抜くことで鮎本来の旨味と香りが凝縮され、焼けば芳ばしい風味が味わえます。
-                  頭から骨まで丸ごと味わえる、季節ならではの一品です。
+                  毎年、この時期、大人気の1品。
+                  天然の雑きのこの豊かな香りと旨みを、熱々の鍋でご堪能ください。
                 </p>
               </div>
             </div>
@@ -300,8 +299,8 @@ export default function Home() {
             <div className="card group stagger-item">
               <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
                 <Image
-                  src="/images/tougan-suishouni.webp"
-                  alt="冬瓜の水晶煮"
+                  src="/images/matsutake.webp"
+                  alt="松茸料理"
                   fill
                   className="object-cover"
                 />
@@ -311,11 +310,11 @@ export default function Home() {
                   className="text-xl mb-2"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
-                  冬瓜の水晶煮
+                  松茸料理
                 </h3>
                 <p className="text-[#333333] text-base leading-relaxed mb-3">
-                  冬瓜をくり抜き器にし、中に冬瓜、アワビ、エビ、白キクラゲなどを煮込み入れました。
-                  夏の人気メニューになります。器には夏らしく花火の彫刻を施してあります。
+                  長野県産・最高級松茸を贅沢に。
+                  土瓶蒸し、焼き、天ぷら、フライなど、松茸本来の芳醇な香りと旨みを多彩な料理でお楽しみください。
                 </p>
               </div>
             </div>
