@@ -246,7 +246,7 @@ export default function Home() {
             </div>
           </FadeIn>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto" staggerDelay={150}>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto" staggerDelay={150}>
             {/* 料理カード1 */}
             <div className="card group stagger-item">
               <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
@@ -293,30 +293,6 @@ export default function Home() {
                 <p className="text-[#333333] text-base leading-relaxed mb-3">
                   毎年、この時期、大人気の1品。
                   天然の雑きのこの豊かな香りと旨みを、熱々の鍋でご堪能ください。
-                </p>
-              </div>
-            </div>
-
-            {/* 料理カード3 */}
-            <div className="card group stagger-item">
-              <div className="aspect-[4/3] relative overflow-hidden hover-zoom">
-                <Image
-                  src="/images/matsutake.webp"
-                  alt="松茸料理"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3
-                  className="text-xl mb-2"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  松茸料理
-                </h3>
-                <p className="text-[#333333] text-base leading-relaxed mb-3">
-                  長野県産・最高級松茸を贅沢に。
-                  土瓶蒸し、焼き、天ぷら、フライなど、松茸本来の芳醇な香りと旨みを多彩な料理でお楽しみください。
                 </p>
               </div>
             </div>
