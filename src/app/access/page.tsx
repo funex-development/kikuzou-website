@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/access" },
     title: "アクセス・店舗情報 | 松本城近くの日本料理・和食",
     description:
         "味処 きく蔵へのアクセス方法と店舗情報。住所：長野県松本市大手4丁目7-10。松本駅お城口から徒歩15分、松本城から徒歩5分。食べログ百名店選出の松本の老舗日本料理・和食・郷土料理店。営業時間17:30〜22:00（日曜定休）。馬刺し・河豚・松茸・山賊焼きなど信州の味覚を。",
