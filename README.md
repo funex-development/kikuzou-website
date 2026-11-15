@@ -108,20 +108,21 @@ existing production Pages project. Production runs are serialized.
 
 Repository settings required before enabling deployment:
 
-- Create the `cloudflare-production` GitHub Environment and allow deployment
-  from the branch `master` only. Add no tag deployment rule. Protect `master`
-  with required pull requests and the `Test and build` check.
-- **Environment** secret `CLOUDFLARE_API_TOKEN`: a dedicated API token limited to Pages
+- Repository secret `CLOUDFLARE_API_TOKEN`: a dedicated API token limited to Pages
   editing in the intended Cloudflare account. Never put it in this repository,
   shell output, or logs, and never reuse a short-lived Wrangler OAuth token.
-  Do not put this token in repository secrets, where other branches can use it.
 - Actions variable `CLOUDFLARE_ACCOUNT_ID`: the account that owns
   `kikuzou-website`.
 
+Repository write-access holders are trusted deployment operators: they can add
+workflows that use repository secrets. The token's Pages permission applies to
+the selected Cloudflare account, including its other Pages projects. Stronger
+isolation can later be added by an administrator using an environment secret,
+deployment branch policies, and protection of `master`.
+
 The build job uploads its verified output as a run-scoped artifact. The separate
-deployment job consumes that artifact under the protected production environment,
-so it deploys the same output that passed the build without rebuilding it with
-access to the deployment token.
+deployment job consumes that artifact, so it deploys the same output that passed
+the build without rebuilding it with access to the deployment token.
 
 The workflow pins third-party actions to full commit SHAs and uses Node.js
 24.22.1 and Wrangler 4.160.1. GitHub token permissions are read-only, checkout
