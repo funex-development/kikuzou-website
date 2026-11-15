@@ -42,3 +42,6 @@ next-env.d.ts
 
 # large files
 public/images/hero.gif
+
+# Cloudflare local state
+.wrangler/

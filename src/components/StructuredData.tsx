@@ -2,15 +2,15 @@ export default function StructuredData() {
     const restaurantSchema = {
         "@context": "https://schema.org",
         "@type": "Restaurant",
-        "@id": "https://kikuzou.vercel.app/#restaurant",
+        "@id": "https://www.matsumoto-kikuzou.com/#restaurant",
         name: "味処 きく蔵",
         alternateName: "きく蔵",
         description:
             "創業1970年、長野県松本市の老舗日本料理店。食べログ日本料理百名店に3度選出。松本の和食・郷土料理の名店として、極上の馬刺し、季節の河豚コース、秋の松茸料理、名物の松本山賊焼きなど四季折々の味覚をお届け。",
-        url: "https://kikuzou.vercel.app",
+        url: "https://www.matsumoto-kikuzou.com",
         telephone: "+81-263-36-3728",
         email: "",
-        image: "https://kikuzou.vercel.app/images/og-image.jpg",
+        image: "https://www.matsumoto-kikuzou.com/images/og-image.jpg",
         priceRange: "¥6,000～¥15,000",
         servesCuisine: ["日本料理", "味処", "懐石料理", "和食", "郷土料理", "信州料理"],
         address: {
@@ -34,9 +34,9 @@ export default function StructuredData() {
                 closes: "22:00",
             },
         ],
-        hasMenu: "https://kikuzou.vercel.app/menu",
+        hasMenu: "https://www.matsumoto-kikuzou.com/menu",
         acceptsReservations: "True",
-        menu: "https://kikuzou.vercel.app/menu",
+        menu: "https://www.matsumoto-kikuzou.com/menu",
         knowsAbout: [
             "松本 日本料理",
             "松本 和食",
@@ -70,7 +70,7 @@ export default function StructuredData() {
             "@type": "ReserveAction",
             target: {
                 "@type": "EntryPoint",
-                urlTemplate: "https://kikuzou.vercel.app/reserve",
+                urlTemplate: "https://www.matsumoto-kikuzou.com/reserve",
             },
             result: {
                 "@type": "Reservation",
@@ -82,9 +82,9 @@ export default function StructuredData() {
     const localBusinessSchema = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "@id": "https://kikuzou.vercel.app/#localbusiness",
+        "@id": "https://www.matsumoto-kikuzou.com/#localbusiness",
         name: "味処 きく蔵",
-        image: "https://kikuzou.vercel.app/images/og-image.jpg",
+        image: "https://www.matsumoto-kikuzou.com/images/og-image.jpg",
         telephone: "+81-263-36-3728",
         address: {
             "@type": "PostalAddress",
@@ -99,7 +99,7 @@ export default function StructuredData() {
             latitude: 36.2376,
             longitude: 137.9712,
         },
-        url: "https://kikuzou.vercel.app",
+        url: "https://www.matsumoto-kikuzou.com",
         openingHoursSpecification: [
             {
                 "@type": "OpeningHoursSpecification",
@@ -119,7 +119,7 @@ export default function StructuredData() {
                 "@type": "ListItem",
                 position: 1,
                 name: "ホーム",
-                item: "https://kikuzou.vercel.app",
+                item: "https://www.matsumoto-kikuzou.com",
             },
         ],
     };

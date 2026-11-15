@@ -2,6 +2,7 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/reserve" },
     title: "ご予約",
     description:
         "味処 きく蔵のご予約案内。電話予約（0263-36-3728）または食べログからネット予約が可能です。コース料理は3日前までにご予約ください。キャンセルポリシーもご確認いただけます。",

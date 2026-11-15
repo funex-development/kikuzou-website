@@ -34,3 +34,99 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+## Cloudflare Pages
+
+The Vercel build (`npm run build`) continues to use the default Next.js runtime.
+For a static Cloudflare build, run:
+
+```bash
+npm ci
+npm test
+npm run build:cloudflare
+```
+
+Publish `out/`. In Cloudflare Pages, use the repository root, build command
+`npm run build:cloudflare`, output directory `out`, and Node.js `24.22.1`
+(or a compatible available Node 24 version). The script enables static export
+only for its build process and copies the existing security headers into the output.
+No API keys or runtime secrets are required by the site.
+
+Four reviewed, unused videos above the 25 MiB asset limit are excluded only
+from generated output. Originals in `public/images/` remain. The build fails
+if those videos become referenced or another oversized asset is added.
+The active video `douga-04.mp4` is retained.
+
+The canonical, sitemap, and structured-data domain is
+`https://www.matsumoto-kikuzou.com`. The generated `_headers` applies `noindex`
+to Pages-provided `*.pages.dev` URLs while leaving the custom domain indexable.
+All six page routes and `404.html` are exported; do not enable SPA fallback.
+
+Deploy and verify the Pages URL before changing DNS. Keep the existing
+Vercel deployment and DNS settings available for rollback. Do not modify
+custom domains, nameservers, or the Vercel subscription as part of staging.
+
+### Production deployment
+
+- Project: `kikuzou-website` (Cloudflare Pages, Direct Upload)
+- Preview URL: https://kikuzou-website.pages.dev/
+- Production URL: https://www.matsumoto-kikuzou.com/
+- Production branch label: `master` (this labels the uploaded deployment; it does not merge the Git branch)
+- Production source branch: `master` (changes go through a pull request)
+
+Normal updates deploy through GitHub Actions after a reviewed pull request is
+merged to `master`. For emergency manual recovery only, use a clean checkout of
+the intended `master` commit after reviewing changes:
+
+```bash
+npm ci
+npm test
+npm run build:cloudflare
+wrangler pages deploy out --project-name kikuzou-website --branch master --commit-hash="$(git rev-parse HEAD)"
+```
+
+Use an existing authorized Cloudflare login and select the intended account.
+No token should be stored in the repository. Do not pass `--force` to deploy
+an existing project. Direct Upload uses the separate GitHub Actions workflow
+below for Git-triggered updates. Pages cannot convert this project to native
+Git integration without creating a new project.
+
+The custom domains now serve Cloudflare Pages. Both apex and www use proxied
+CNAME records pointing to `kikuzou-website.pages.dev`. The apex redirects to HTTPS
+www with a permanent redirect that preserves the path and query string. Existing
+TXT, CAA, wildcard, and `_domainconnect` records remain. Keep the Vercel project
+and subscription available for rollback; do not change other sites or billing.
+
+### GitHub Actions automatic updates
+
+`.github/workflows/cloudflare-pages.yml` installs locked dependencies, runs
+`npm test`, and builds the static output. Pull requests targeting `master` run
+these checks without a Cloudflare token. Only pushes to `master` in
+`funex-development/kikuzou-website`, or a manual run on that branch, deploy to the
+existing production Pages project. Production runs are serialized.
+
+Repository settings required before enabling deployment:
+
+- Repository secret `CLOUDFLARE_API_TOKEN`: a dedicated API token limited to Pages
+  editing in the intended Cloudflare account. Never put it in this repository,
+  shell output, or logs, and never reuse a short-lived Wrangler OAuth token.
+- Actions variable `CLOUDFLARE_ACCOUNT_ID`: the account that owns
+  `kikuzou-website`.
+
+Repository write-access holders are trusted deployment operators: they can add
+workflows that use repository secrets. The token's Pages permission applies to
+the selected Cloudflare account, including its other Pages projects. Stronger
+isolation can later be added by an administrator using an environment secret,
+deployment branch policies, and protection of `master`.
+
+The build job uploads its verified output as a run-scoped artifact. The separate
+deployment job consumes that artifact, so it deploys the same output that passed
+the build without rebuilding it with access to the deployment token.
+
+The workflow pins third-party actions to full commit SHAs and uses Node.js
+24.22.1 and Wrangler 4.160.1. GitHub token permissions are read-only, checkout
+does not persist credentials, and Cloudflare authentication is passed only to
+the production deployment job. After deploying, the workflow checks the new
+deployment URL and production pages, robots, and sitemap over HTTPS. Check the Actions run and Pages deployment
+commit before reporting a release as published.

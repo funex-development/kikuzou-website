@@ -19,7 +19,8 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kikuzou.vercel.app"),
+  alternates: { canonical: "/" },
+  metadataBase: new URL("https://www.matsumoto-kikuzou.com"),
   title: {
     default: "味処 きく蔵 | 松本市の老舗日本料理店",
     template: "%s | 味処 きく蔵",
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    url: "https://kikuzou.vercel.app",
+    url: "https://www.matsumoto-kikuzou.com",
     siteName: "味処 きく蔵",
     title: "味処 きく蔵 | 松本市の老舗日本料理店",
     description:
