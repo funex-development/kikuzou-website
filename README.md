@@ -73,15 +73,17 @@ custom domains, nameservers, or the Vercel subscription as part of staging.
 - Preview URL: https://kikuzou-website.pages.dev/
 - Production URL: https://www.matsumoto-kikuzou.com/
 - Production branch label: `master` (this labels the uploaded deployment; it does not merge the Git branch)
-- Current source branch: `chore/cloudflare-static`
+- Production source branch: `master` (changes go through a pull request)
 
-To update this project after reviewing changes:
+Normal updates deploy through GitHub Actions after a reviewed pull request is
+merged to `master`. For emergency manual recovery only, use a clean checkout of
+the intended `master` commit after reviewing changes:
 
 ```bash
 npm ci
 npm test
 npm run build:cloudflare
-wrangler pages deploy out --project-name kikuzou-website --branch master
+wrangler pages deploy out --project-name kikuzou-website --branch master --commit-hash="$(git rev-parse HEAD)"
 ```
 
 Use an existing authorized Cloudflare login and select the intended account.
@@ -106,15 +108,24 @@ existing production Pages project. Production runs are serialized.
 
 Repository settings required before enabling deployment:
 
-- Actions secret `CLOUDFLARE_API_TOKEN`: a dedicated API token limited to Pages
+- Create the `cloudflare-production` GitHub Environment and allow deployment
+  from the branch `master` only. Add no tag deployment rule. Protect `master`
+  with required pull requests and the `Test and build` check.
+- **Environment** secret `CLOUDFLARE_API_TOKEN`: a dedicated API token limited to Pages
   editing in the intended Cloudflare account. Never put it in this repository,
   shell output, or logs, and never reuse a short-lived Wrangler OAuth token.
+  Do not put this token in repository secrets, where other branches can use it.
 - Actions variable `CLOUDFLARE_ACCOUNT_ID`: the account that owns
   `kikuzou-website`.
+
+The build job uploads its verified output as a run-scoped artifact. The separate
+deployment job consumes that artifact under the protected production environment,
+so it deploys the same output that passed the build without rebuilding it with
+access to the deployment token.
 
 The workflow pins third-party actions to full commit SHAs and uses Node.js
 24.22.1 and Wrangler 4.160.1. GitHub token permissions are read-only, checkout
 does not persist credentials, and Cloudflare authentication is passed only to
-the deployment step. After deploying, the workflow checks the production pages,
-robots, and sitemap over HTTPS. Check the Actions run and Pages deployment
+the production deployment job. After deploying, the workflow checks the new
+deployment URL and production pages, robots, and sitemap over HTTPS. Check the Actions run and Pages deployment
 commit before reporting a release as published.
