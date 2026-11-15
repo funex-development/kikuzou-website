@@ -130,3 +130,26 @@ does not persist credentials, and Cloudflare authentication is passed only to
 the production deployment job. After deploying, the workflow checks the new
 deployment URL and production pages, robots, and sitemap over HTTPS. Check the Actions run and Pages deployment
 commit before reporting a release as published.
+
+### Visitors with pages cached before the migration
+
+The static build includes a small Pages Worker for `/_next/image` only. It serves
+the original local image for legacy Next.js image URLs, including encoded Japanese
+filenames. Only image paths present in the build are accepted; external URLs and
+write methods are rejected. The original dimensions and quality query parameters
+are accepted for compatibility but images are served without resizing. Other
+requests continue to use static hosting.
+
+`compat/legacy-static.json.gz` preserves 266 CSS, JavaScript, font, and icon files
+from the retained local build of commit `bb61573` (2026-10-31). The readable
+`compat/legacy-static.manifest.json` lists their paths and SHA-256 hashes. Each
+build restores these files to their original `/_next/static/` paths. A checksum
+failure or a same-path, different-content collision fails the build. Do not replace
+old hashed filenames with current bundle contents or remove this archive when
+cleaning generated files. The archive is compressed to keep generated JavaScript
+out of Tailwind's source scanning.
+
+This preserves the available historical build, rather than claiming coverage of
+every previous Vercel deployment. New builds still use their own hashed assets,
+and HTML keeps its normal revalidation behavior. No browser cache clearing,
+cookies, visitor authentication, or external Vercel requests are used by the Worker.
