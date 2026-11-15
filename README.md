@@ -66,3 +66,30 @@ All six page routes and `404.html` are exported; do not enable SPA fallback.
 Deploy and verify the Pages URL before changing DNS. Keep the existing
 Vercel deployment and DNS settings available for rollback. Do not modify
 custom domains, nameservers, or the Vercel subscription as part of staging.
+
+### Current staging deployment
+
+- Project: `kikuzou-website` (Cloudflare Pages, Direct Upload)
+- Preview URL: https://kikuzou-website.pages.dev/
+- Production branch label: `master` (this labels the uploaded deployment; it does not merge the Git branch)
+- Current source branch: `chore/cloudflare-static`
+
+To update this project after reviewing changes:
+
+```bash
+npm ci
+npm test
+npm run build:cloudflare
+wrangler pages deploy out --project-name kikuzou-website --branch master
+```
+
+Use an existing authorized Cloudflare login and select the intended account.
+No token should be stored in the repository. Do not pass `--force` to deploy
+an existing project. Direct Upload does not enable Git-triggered builds;
+automatic updates would require a separate CI workflow. Pages cannot later
+convert this project to native Git integration without creating a new project.
+
+The custom domain and Vercel DNS still serve the existing Vercel production site.
+Before DNS cutover, inventory all DNS records and DNSSEC, verify the mobile
+layout and video playback, and set up the custom domain, HTTPS, redirects, and
+appropriate bot protection. Vercel's WAF rules do not migrate automatically.
