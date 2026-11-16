@@ -1,5 +1,7 @@
-import { readdir, readFile, stat, rm, writeFile } from "node:fs/promises";
+import { readdir, readFile, stat, rm, writeFile, mkdir } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
+import { gunzipSync } from "node:zlib";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -15,6 +17,34 @@ async function filesIn(directory) {
   return files.flat();
 }
 
+async function restoreLegacyStatic(outputDir, sourceDir) {
+  const archive = JSON.parse(gunzipSync(
+    await readFile(path.resolve(sourceDir, "../compat/legacy-static.json.gz")),
+    { maxOutputLength: 64 * 1024 * 1024 },
+  ).toString("utf8"));
+  if (archive.version !== 1 || !Array.isArray(archive.files)) throw new Error("Invalid legacy static archive");
+  const seen = new Set();
+  for (const entry of archive.files) {
+    if (typeof entry.path !== "string" || !/^[A-Za-z0-9_./-]+$/.test(entry.path) ||
+        entry.path.startsWith("/") || entry.path.split("/").some((part) => !part || part === "." || part === "..") ||
+        seen.has(entry.path)) throw new Error("Invalid legacy static path");
+    seen.add(entry.path);
+    const bytes = Buffer.from(entry.data, "base64");
+    if (createHash("sha256").update(bytes).digest("hex") !== entry.sha256) {
+      throw new Error(`Legacy static checksum mismatch: ${entry.path}`);
+    }
+    const target = path.join(outputDir, "_next/static", entry.path);
+    try {
+      const current = await readFile(target);
+      if (!current.equals(bytes)) throw new Error(`Immutable static collision: ${entry.path}`);
+    } catch (error) {
+      if (error.code !== "ENOENT") throw error;
+      await mkdir(path.dirname(target), { recursive: true });
+      await writeFile(target, bytes, { flag: "wx" });
+    }
+  }
+}
+
 export async function prepareCloudflareOutput(outputDir, sourceDir) {
   const sourceFiles = (await filesIn(sourceDir)).filter((file) => /\.(tsx?|jsx?|css|json)$/.test(file));
   const source = (await Promise.all(sourceFiles.map((file) => readFile(file, "utf8")))).join("\n");
@@ -25,12 +55,24 @@ export async function prepareCloudflareOutput(outputDir, sourceDir) {
   for (const video of unusedLegacyVideos) {
     await rm(path.join(outputDir, "images", video), { force: true });
   }
+  await restoreLegacyStatic(outputDir, sourceDir);
   const files = await filesIn(outputDir);
   for (const file of files) {
     if ((await stat(file)).size > maxAssetSize) {
       throw new Error(`Asset exceeds 25 MiB: ${path.relative(outputDir, file)}`);
     }
   }
+  const imagePaths = files
+    .map((file) => `/${path.relative(outputDir, file).split(path.sep).join("/")}`)
+    .filter((file) => /^\/images\/.+\.(?:png|jpe?g|webp|gif|avif|svg|ico)$/i.test(file))
+    .sort();
+  const legacyWorker = await readFile(new URL("./legacy-images-worker.mjs", import.meta.url), "utf8");
+  await writeFile(path.join(outputDir, "_worker.js"),
+    `${legacyWorker}\nexport default createLegacyImageHandler(${JSON.stringify(imagePaths)});\n`);
+  // All other routes remain static and consume no Pages Functions requests.
+  await writeFile(path.join(outputDir, "_routes.json"), JSON.stringify({
+    version: 1, include: ["/_next/image"], exclude: [],
+  }, null, 2));
   await writeFile(path.join(outputDir, "_headers"), `/*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
